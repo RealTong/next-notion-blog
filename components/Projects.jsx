@@ -1,27 +1,6 @@
 import {TbBrandDocker, TbBrandWechat} from "react-icons/tb";
 import {SiAdguard} from "react-icons/si";
 
-function Projects() {
-    return (
-        <div>
-            <h1>Projects</h1>
-            {
-                projectList.map((project, index) => {
-                    return (
-                        <Project
-                            key={index}
-                            icon={project.icon}
-                            name={project.name}
-                            description={project.description}
-                            link={project.link}
-                        />
-                    )
-                })
-            }
-        </div>
-    )
-}
-
 const projectList = [
     {
         icon: <TbBrandWechat/>,
@@ -48,14 +27,44 @@ const projectList = [
         link: "https://github.com/RealTong/streaming-unlock"
     }
 ]
-function Project({icon, name, description, link,key}){
-    return (
 
-        <a href={link} target={"_blank"}>
-            <div key={key}>
-                {icon}
-                <h2>{name}</h2>
-                <p>{description}</p>
+function Projects() {
+    return (
+        <div>
+            <p className={"my-4 text-3xl font-bold"}>Projects</p>
+            <div className={"grid gap-4 grid-cols-1 sm:grid-cols-2"}>
+                {
+                    projectList.map((project, index) => {
+                        return (
+                            <Project
+                                key={index}
+                                icon={project.icon}
+                                name={project.name}
+                                description={project.description}
+                                link={project.link}
+                            />
+                        )
+                    })
+                }
+            </div>
+        </div>
+    )
+}
+
+function Project({icon, name, description, link, key}) {
+    return (
+        // px-4 py-3 rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20
+        <a href={link}
+           target={"_blank"}
+           key={key}
+           className={"px-4 py-3 rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20"}
+        >
+            <div className={"flex h-full items-center justify-center"}>
+                <div className={"mr-4 text-4xl"}>{icon}</div>
+                <div className={"flex-1"}>
+                    <p className={"font-medium leading-relaxed"}>{name}</p>
+                    <p className={" op-50 font-normal text-sm"}>{description}</p>
+                </div>
             </div>
         </a>
     )
