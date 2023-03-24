@@ -5,25 +5,19 @@ const projectList = [
     {
         icon: <TbBrandWechat/>,
         name: "wechat-chatgpt",
-        description: "Use ChatGPT On Wechat via wechaty",
+        description: "Use ChatGPT On Wechat via wechaty.",
         link: "https://github.com/fuergaosi233/wechat-chatgpt"
     },
     {
         icon: <TbBrandDocker/>,
         name: "Profile",
-        description: "Self-use Profile",
+        description: "Self-use Profile.",
         link: "https://github.com/RealTong/Profile"
-    },
-    {
-        icon: <TbBrandDocker/>,
-        name: "Project 1",
-        description: "This is a project",
-        link: ""
     },
     {
         icon: <SiAdguard/>,
         name: "streaming-unlock",
-        description: "Break through streaming restrictions with Adguard Home and Sniproxy",
+        description: "Break through streaming restrictions.",
         link: "https://github.com/RealTong/streaming-unlock"
     }
 ]
@@ -51,15 +45,15 @@ function Projects() {
     )
 }
 
-function Project({icon, name, description, link, key}) {
+function Project({icon, name, description, link},key) {
     return (
         // px-4 py-3 rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20
         <a href={link}
            target={"_blank"}
            key={key}
-           className={"px-4 py-3 rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20"}
+           className={"flex px-4 py-3 min-w-min rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20"}
         >
-            <div className={"flex h-full items-center justify-center"}>
+            <div className={"flex items-center justify-center"}>
                 <div className={"mr-4 text-4xl"}>{icon}</div>
                 <div className={"flex-1"}>
                     <p className={"font-medium leading-relaxed"}>{name}</p>

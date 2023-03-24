@@ -1,4 +1,3 @@
-
 const latestPostList=[
     {
         title: "Post 1Post 1Post 1Post 1Post 1Post 1",
@@ -33,8 +32,8 @@ function Post({title, link, date},key){
            key={key}
            className={"flex justify-between h-10 p-2 rounded-md transition-colors hover:bg-gray-100"}
         >
-            <p>{title}</p>
-            <p className={"op-40 font-normal"}>{date}</p>
+            <p className={"truncate w-2/3"}>{title}</p>
+            <p className={"font-normal"}>{date}</p>
         </a>
     )
 }

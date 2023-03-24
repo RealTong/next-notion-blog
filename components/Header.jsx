@@ -5,8 +5,15 @@ import {
     TbBrandInstagram,
     TbBrandTwitter
 } from "react-icons/tb";
+import {HiOutlineMail} from "react-icons/hi";
 
 const brandList = [
+    {
+        brandIcon: <HiOutlineMail/>,
+        brandName: "Email",
+        link: "mailto:i@realtong.cn",
+        css: "hover:bg-[#000000]"
+    },
     {
         brandIcon: <TbBrandGithub/>,
         brandName: "Github",
@@ -41,23 +48,17 @@ const brandList = [
 
 function Header() {
     return (
-        <div className={"w-full mt-20"}>
+        <div className={"mt-20"}>
             <div className={"text-5xl font-bold"}>
-                <span>👋</span>
-                <span className={"block"}>Hello,</span>
-                <span className={"block"}>I'm Tong.</span>
+                <p>👋</p>
+                <p>Hello,</p>
+                <p>I'm Tong.</p>
             </div>
-            <div className={"flex flex-col justify-between mt-6 h-14"}>
-                <div>
-                    <span>🎒 Student / 💻Web Developer</span>
-                </div>
-                <div>
-                    <span>
-                        I like making interesting projects.
-                    </span>
-                </div>
+            <div className={"flex flex-col justify-between mt-6 h-14 max-h-14"}>
+                    <p>🎒 Student / 💻Web Developer</p>
+                    <p>I like making interesting projects.</p>
             </div>
-            <div className={"flex flex-row w-full flex-nowrap justify-between mt-2"}>
+            <div className={"flex flex-row max-w-full flex-nowrap sm:flex-wrap justify-start mt-2"}>
                 {
                     brandList.map((brand, index) => {
                         return Brand(brand, index)
@@ -73,9 +74,9 @@ function Brand({brandIcon, brandName, link, css}, key) {
         <a key={key}
            href={link}
            target={"_blank"}
-           className={`decoration-none block flex flex-row flex-nowrap justify-between p-2 my-2 rounded-md bg-gray-50 leading-[1rem] transition-colors  hover:text-white ${css}`}>
+           className={`decoration-none block flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors hover:text-white ${css}`}>
             {brandIcon}
-            <span>{brandName}</span>
+            <span className={"ml-1 hidden md:block"}>{brandName}</span>
         </a>
     )
 }
