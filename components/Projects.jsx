@@ -47,7 +47,6 @@ function Projects() {
 
 function Project({icon, name, description, link},key) {
     return (
-        // px-4 py-3 rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20
         <a href={link}
            target={"_blank"}
            key={key}

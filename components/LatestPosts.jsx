@@ -30,7 +30,7 @@ function Post({title, link, date},key){
         <a href={link}
            target={"_blank"}
            key={key}
-           className={"flex justify-between h-10 p-2 rounded-md transition-colors hover:bg-gray-100"}
+           className={"flex justify-between h-10 p-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-neutral-600"}
         >
             <p className={"truncate w-2/3"}>{title}</p>
             <p className={"font-normal"}>{date}</p>

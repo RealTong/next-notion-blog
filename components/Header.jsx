@@ -12,13 +12,19 @@ const brandList = [
         brandIcon: <HiOutlineMail/>,
         brandName: "Email",
         link: "mailto:i@realtong.cn",
-        css: "hover:bg-[#000000]"
+        css: "hover:bg-[#34A853]"
     },
     {
         brandIcon: <TbBrandGithub/>,
         brandName: "Github",
         link: "https://github.com/RealTong",
         css: "hover:bg-[#000000]"
+    },
+    {
+        brandIcon: <TbBrandFigma/>,
+        brandName: "Figma",
+        link: "https://www.figma.com/@wulanren",
+        css: "hover:bg-[#F24E1E]"
     },
     {
         brandIcon: <TbBrandTwitter/>,
@@ -31,12 +37,6 @@ const brandList = [
         brandName: "Instagram",
         link: "https://www.instagram.com/realtong_run/",
         css: "hover:bg-[#d6249f]"
-    },
-    {
-        brandIcon: <TbBrandFigma/>,
-        brandName: "Figma",
-        link: "https://www.figma.com/@wulanren",
-        css: "hover:bg-[#F24E1E]"
     },
     {
         brandIcon: <TbBrandBilibili/>,
@@ -74,7 +74,7 @@ function Brand({brandIcon, brandName, link, css}, key) {
         <a key={key}
            href={link}
            target={"_blank"}
-           className={`decoration-none block flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors hover:text-white ${css}`}>
+           className={`decoration-none block flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors dark:bg-gray-50/10 hover:text-white ${css}`}>
             {brandIcon}
             <span className={"ml-1 hidden md:block"}>{brandName}</span>
         </a>
