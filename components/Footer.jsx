@@ -1,7 +1,10 @@
-function Footer(){
+function Footer(props){
     return(
         <>
-            <h1 className={"mt-10"}>Copyright <a href="https://realtong.cn" className={"underline"}>Tong</a> {`\u00A9 ${getYear()}`}. Design by <a href="https://ddiu.io/" className={"hover:text-[#789388] underline"}>ddiu.io</a> </h1>
+            <p className={`mt-10 w-full text-${props.align}`}>
+                Copyright <a href="https://realtong.cn" className={"underline"}>Tong</a>{` \u00A9 ${getYear()}`}.
+                Design by <a href="https://ddiu.io/" className={"hover:text-[#789388] underline"}>ddiu.io</a>
+            </p>
         </>
     )
 }

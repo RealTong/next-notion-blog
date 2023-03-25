@@ -1,30 +1,5 @@
-const latestPostList=[
-    {
-        title: "Post 1Post 1Post 1Post 1Post 1Post 1",
-        link: "https://google.com",
-        date: "2021-08-01",
-    },
-    {
-        title: "Post 2Post 2Post 2",
-        link: "https://google.com",
-        date: "2021-08-01",
-    },
-    {
-        title: "Post 3",
-        link: "https://google.com",
-        date: "2021-08-01",
-    },
-    {
-        title: "Post 4Post 4",
-        link: "https://google.com",
-        date: "2021-08-01",
-    },
-    {
-        title: "Post 5Post 5Post 5Post 5",
-        link: "https://google.com",
-        date: "2021-08-01",
-    }
-]
+import {BsArrowUpRight} from "react-icons/bs";
+
 function Post({title, link, date},key){
     return (
         <a href={link}
@@ -37,10 +12,13 @@ function Post({title, link, date},key){
         </a>
     )
 }
-function LatestPosts() {
+function LatestPosts({latestPostList}) {
     return(
         <>
-            <p className={"my-4 text-3xl font-bold pb-4"}>Latest Posts</p>
+            <div className={"flex justify-between my-4 text-3xl font-bold pb-4"}>
+                <p>Latest Posts</p>
+                <a href="/blog" className={"text-neutral-800 hover:text-neutral-600 transition-colors"}><BsArrowUpRight size={24}/></a>
+            </div>
             <div>
                 {
                     latestPostList.map((post, index) => {
