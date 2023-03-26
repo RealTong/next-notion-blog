@@ -1,14 +1,15 @@
 import {getPublishPosts} from "../../components/notion/api";
 import Post from "../../components/blog/Post";
 import Footer from "../../components/Footer";
-
+import Header from "../../components/blog/Header";
 
 
 function index(props) {
     return (
         <div className={"bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
-            <div className={"flex flex-col justify-between max-w-3xl w-screen h-screen  mx-auto p-6"}>
-                <p className={"text-4xl font-bold"}>Blog posts</p>
+            <div className={"flex flex-col justify-between max-w-3xl w-screen h-screen  mx-auto px-6 py-3"}>
+                <Header/>
+                <p className={"text-4xl font-bold my-10 font-mono"}>Blog posts</p>
                 <div className={"h-full"}>
                     {
                         props.latestPostTitle.results.map((post) => {
@@ -33,11 +34,11 @@ function index(props) {
 
 export async function getStaticProps() {
     const latestPostTitle = await getPublishPosts();
-    console.log("LATEST",JSON.stringify(latestPostTitle))
     return {
         props: {
             latestPostTitle
         }
     }
 }
+
 export default index;
