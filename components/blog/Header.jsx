@@ -27,8 +27,8 @@ function Header() {
     return (
         <div className={"flex flex-row justify-between w-full h-12 text-2xl"}>
             <div className={""}>
-                <img src="/avatar.jpg" alt="" className={"w-full h-full cursor-pointer rounded-full block dark:hidden"}/>
-                <img src="/avatar.png" alt="" className={"w-full h-full rounded-full hidden dark:block"}/>
+                <a href="/"><img src="/avatar.jpg" alt="" className={"w-full h-full rounded-full block dark:hidden"}/></a>
+                <a href="/"><img src="/avatar.png" alt="" className={"w-full h-full rounded-full hidden dark:block"}/></a>
             </div>
 
             <div className={"flex relative h-full"}>

@@ -54,7 +54,7 @@ function Header() {
                 <p>Hello,</p>
                 <p>I'm Tong.</p>
             </div>
-            <div className={"flex flex-col justify-between mt-6 h-14 max-h-14"}>
+            <div className={"flex flex-col justify-between mt-6"}>
                     <p>🎒 Student / 💻Web Developer</p>
                     <p>I like making interesting projects.</p>
             </div>
