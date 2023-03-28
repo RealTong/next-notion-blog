@@ -2,8 +2,8 @@ import {BsArrowUpRight} from "react-icons/bs";
 
 function Post({title, link, date},key){
     return (
-        <a href={link}
-           target={"_blank"}
+        <a href={`/blog/${link}`}
+           target={"_self"}
            key={key}
            className={"flex justify-between p-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-neutral-600"}
         >
@@ -17,7 +17,7 @@ function LatestPosts({latestPostList}) {
         <>
             <div className={"flex justify-between my-4 text-3xl font-bold pb-4 w-full"}>
                 <p>Latest Posts</p>
-                <a href="/blog" className={"text-neutral-800 hover:text-neutral-600 transition-colors dark:text-gray-300"}>
+                <a href="/blog" target={"_self"} className={"text-neutral-800 hover:text-neutral-600 transition-colors dark:text-gray-300"}>
                     <BsArrowUpRight size={24}/>
                 </a>
             </div>
@@ -25,11 +25,10 @@ function LatestPosts({latestPostList}) {
                 {
                     latestPostList.map((post, index) => {
                         return (
-                            <Post
+                            <Post key={index}
                                 date={post.date}
                                 link={post.link}
                                 title={post.title}
-                                key={index}
                             />
                         )
                     })

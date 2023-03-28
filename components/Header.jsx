@@ -1,5 +1,5 @@
 import {
-    TbBrandBilibili,
+    TbBrandBilibili, TbBrandDiscord,
     TbBrandFigma,
     TbBrandGithub,
     TbBrandInstagram,
@@ -39,6 +39,12 @@ const brandList = [
         css: "hover:bg-[#d6249f]"
     },
     {
+        brandIcon: <TbBrandDiscord/>,
+        brandName: "Discord",
+        link: "https://discord.gg/SF9TqBnNSJ",
+        css: "hover:bg-[#7289DA]"
+    },
+    {
         brandIcon: <TbBrandBilibili/>,
         brandName: "Bilibili",
         link: "https://space.bilibili.com/195743150",
@@ -55,29 +61,26 @@ function Header() {
                 <p>I'm Tong.</p>
             </div>
             <div className={"flex flex-col justify-between mt-6"}>
-                    <p>🎒 Student / 💻Web Developer</p>
-                    <p>I like making interesting projects.</p>
+                <p>🎒 Student / 💻Web Developer</p>
+                <p>I like making interesting projects.</p>
             </div>
             <div className={"flex flex-row max-w-full flex-nowrap sm:flex-wrap justify-start mt-2"}>
                 {
                     brandList.map((brand, index) => {
-                        return Brand(brand, index)
+                        return(
+                            <a
+                                key={index}
+                                href={brand.link}
+                                target={"_blank"}
+                                className={`decoration-none block flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors dark:bg-gray-50/10 hover:text-white ${brand.css}`}>
+                                {brand.brandIcon}
+                                <span className={"ml-1 hidden md:block"}>{brand.brandName}</span>
+                            </a>
+                        )
                     })
                 }
             </div>
         </div>
-    )
-}
-
-function Brand({brandIcon, brandName, link, css}, key) {
-    return (
-        <a key={key}
-           href={link}
-           target={"_blank"}
-           className={`decoration-none block flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors dark:bg-gray-50/10 hover:text-white ${css}`}>
-            {brandIcon}
-            <span className={"ml-1 hidden md:block"}>{brandName}</span>
-        </a>
     )
 }
 

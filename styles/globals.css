@@ -7,7 +7,7 @@
     --c-bg: #ffffff;
     --c-scroll: #d9d9d9;
     --c-scroll-hover: #bbbbbb;
-    scrollbar-color: var(--c-scrollbar) var(--c-bg);
+    scrollbar-color: var(--c-bg);
 }
 
 html {
@@ -24,8 +24,16 @@ html {
     }
 }
 
-.title {
-    font-family: 'Hubot Sans', sans-serif;
+img{
+    transition: 0.5s;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
 }
 
 ::-webkit-scrollbar {

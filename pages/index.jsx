@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Projects from "../components/Projects";
 import LatestPosts from "../components/LatestPosts";
 import Footer from "../components/Footer";
-import {getPublishPosts} from "../components/notion/api";
+import {getPosts} from "../lib/notion";
 
 export default function Index(props) {
     return (
@@ -12,14 +12,14 @@ export default function Index(props) {
                 <Header/>
                 <Projects/>
                 <LatestPosts latestPostList={
-                    props.latestPosts.results.map((post) => {
-                      return {
-                          title: post.properties.name.title[0].plain_text,
-                          date: post.properties.date.date.start,
-                          link: post.url,
-                      }
+                    props.latestPosts.map((post) => {
+                        return {
+                            title: post.properties.name.title[0].plain_text,
+                            date: post.properties.date.date.start,
+                            link: post.properties.slug.rich_text[0].plain_text,
+                        }
                     })
-                } />
+                }/>
                 <Footer align={"left"}/>
             </div>
         </div>
@@ -27,7 +27,7 @@ export default function Index(props) {
 }
 
 export async function getStaticProps() {
-    const latestPosts = await getPublishPosts();
+    const latestPosts = await getPosts();
     return {
         props: {
             latestPosts

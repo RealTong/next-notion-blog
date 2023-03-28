@@ -1,7 +1,7 @@
 function BlogCopyright({page, link}) {
     return (
         <div
-            className="relative -mb-4 overflow-hidden rounded bg-light-400 p-4 text-sm dark:bg-dark-400 md:-mx-4 md:rounded-none">
+            className="relative -mb-4 mt-4 overflow-hidden rounded bg-light-400 p-4 text-sm dark:bg-dark-400 md:-mx-4 md:rounded-none">
             <div className="absolute top-0 right-0 w-64 translate-x-10 translate-y-3 transform opacity-10">
                 <svg
                     className="fill-current"
@@ -21,11 +21,10 @@ function BlogCopyright({page, link}) {
                 </svg>
             </div>
             <div className="font-serif text-lg leading-6">
-                {page && page.properties && page.properties.name.title[0].plain_text} - RealTong
+                {page.properties.name.title[0].plain_text} - RealTong
             </div>
             <div className="leading-5 opacity-90">
                 <a href={link} target="_blank" rel="noopener noreferrer">
-                    {/* {`${hostname}/blog/${router.query.slug}`} */}
                     {link}
                 </a>
             </div>
@@ -33,7 +32,7 @@ function BlogCopyright({page, link}) {
                 <div>
                     <div className="text-xs">Author</div>
                     <div>
-                        {page && page.properties && page.properties.author.people
+                        {page.properties.author.people
                             .map((person) => person.name)
                             .join(', ')}
                     </div>
