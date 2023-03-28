@@ -2,36 +2,53 @@ import {getBlocks, getPage, getPosts} from "../../lib/notion";
 import Copyright from "../../components/blog/Copyright";
 import NotionRenderer from "../../components/blog/NotionRenderer";
 import probeImageSize from "../../lib/imaging";
+import Header from "../../components/blog/Header";
+import Footer from "../../components/Footer";
 
 function Post(props) {
     const host = "wst.sh"
     const page = props.page
     if (!page) return <div>loading...</div>
-    return(
-        <div className={""}>
-            <p>Post: {page.id}</p>
-            {
-                props.blocks.map((block, index)=>{
-                    console.log(block)
-                    return <NotionRenderer key={index} block={block}/>
-                })
-            }
-            <Copyright
-                link={`https://${host}/blog/${page.properties.slug.rich_text[0].text.content}`}
-                page={page}
-            />
+    return (
+        <div className={"mx-auto p-6 w-full md:max-w-3xl"}>
+            <Header/>
+            <div>
+                <h1 className={"text-4xl font-bold"}>{page.properties.name.title[0].plain_text}</h1>
+            </div>
+            <div>
+                {
+                    props.blocks.map((block, index) => {
+                        return (
+                            <>
+                                <br/>
+                                <NotionRenderer key={index} block={block}/>
+                            </>
+                        )
+                    })
+                }
+                <Copyright
+                    link={`https://${host}/blog/${page.properties.slug.rich_text[0].text.content}`}
+                    page={page}
+                />
+            </div>
+            <div
+                className={"flex flex-col justify-between min-w-0 w-full h-full p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
+            </div>
+            <Footer align={"center"}/>
         </div>
     )
 }
+
 export const getStaticPaths = async () => {
     const db = await getPosts();
     return {
         paths: db.map((p) => ({
-            params: { slug: p.properties.slug.rich_text[0].text.content },
+            params: {slug: p.properties.slug.rich_text[0].text.content},
         })),
         fallback: 'blocking',
     }
 }
+
 export async function getStaticProps({params}) {
     const slug = params.slug
     const database = await getPosts(slug)
@@ -41,13 +58,13 @@ export async function getStaticProps({params}) {
     // 探测图片尺寸
     await Promise.all(
         blocks.filter(block => block.type === 'image').map(async (block) => {
-            const { type } = block
+            const {type} = block
             const value = block[type]
             const src =
                 value.type === 'external' ? value.external.url : value.file.url
 
-            const { width, height } = await probeImageSize(src)
-            value['dim'] = { width, height }
+            const {width, height} = await probeImageSize(src)
+            value['dim'] = {width, height}
             block[type] = value
         })
     )
@@ -58,4 +75,5 @@ export async function getStaticProps({params}) {
         }
     }
 }
+
 export default Post

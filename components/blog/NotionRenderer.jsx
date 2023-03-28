@@ -12,25 +12,25 @@ function NotionRenderer({block}) {
             return <Text text={block.paragraph.rich_text}/>
         case "heading_1":
             return (
-                <div className={"text-1xl"}>
+                <div className={"text-1xl font-bold"}>
                     {block.heading_1.rich_text[0].plain_text}
                 </div>
             )
         case "heading_2":
             return (
-                <div className={"text-2xl"}>
+                <div className={"text-2xl font-bold"}>
                     {block.heading_2.rich_text[0].plain_text}
                 </div>
             )
         case "heading_3":
             return (
-                <div className={"text-3xl"}>
+                <div className={"text-3xl font-bold"}>
                     {block.heading_3.rich_text[0].plain_text}
                 </div>
             )
         case 'quote':
             return (
-                <p className="rounded border-l-2 bg-light-300 p-4 dark:bg-dark-600">
+                <p className="rounded border-l-4 bg-gray-50 p-4 dark:bg-dark-600">
                     <Text text={block.quote.rich_text} />
                 </p>
             )
