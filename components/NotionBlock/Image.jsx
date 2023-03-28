@@ -7,7 +7,6 @@ export const getMediaCtx = (value) => {
 
 function NotionImage({value}){
     const { src: imageSrc, caption: imageCaption } = getMediaCtx(value)
-    console.log("NotionImage: ", JSON.stringify(value))
     const {dim:{width, height}} = value
     return (
         <figure>

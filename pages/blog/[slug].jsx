@@ -20,7 +20,7 @@ function Post(props) {
                     props.blocks.map((block, index) => {
                         return (
                             <>
-                                <br/>
+                                <br key={index}/>
                                 <NotionRenderer key={index} block={block}/>
                             </>
                         )
