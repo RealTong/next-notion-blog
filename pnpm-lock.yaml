@@ -11,6 +11,7 @@ specifiers:
   react-github-calendar: ^3.4.0
   react-icons: ^4.8.0
   react-syntax-highlighter: ^15.5.0
+  react-tooltip: ^5.10.1
   tailwindcss: ^3.2.7
 
 dependencies:
@@ -19,8 +20,9 @@ dependencies:
   probe-image-size: 7.2.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-github-calendar: 3.4.0_biqbaboplfbrettd7655fr4n2y
+  react-github-calendar: 3.4.0_snf7vdq6ampwhmiij6nj52ckcm
   react-syntax-highlighter: 15.5.0_react@18.2.0
+  react-tooltip: 5.10.1_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.21
@@ -35,6 +37,16 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
+    dev: false
+
+  /@floating-ui/core/1.2.5:
+    resolution: {integrity: sha512-qrcbyfnRVziRlB6IYwjCopYhO7Vud750JlJyuljruIXcPxr22y8zdckcJGsuOdnQ639uVD1tTXddrcH3t3QYIQ==}
+    dev: false
+
+  /@floating-ui/dom/1.2.5:
+    resolution: {integrity: sha512-+sAUfpQ3Frz+VCbPCqj+cZzvEESy3fjSeT/pDWkYCWOBXYNNKZfuVsHuv8/JO2zze8+Eb/Q7a6hZVgzS81fLbQ==}
+    dependencies:
+      '@floating-ui/core': 1.2.5
     dev: false
 
   /@next/env/13.2.1:
@@ -328,6 +340,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /client-only/0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
@@ -871,7 +887,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /react-activity-calendar/1.7.0_biqbaboplfbrettd7655fr4n2y:
+  /react-activity-calendar/1.7.0_snf7vdq6ampwhmiij6nj52ckcm:
     resolution: {integrity: sha512-iyUNhnYYM2zuSI5KUD4xjTbWH4wBFYFm7M1FwZ1J+g8jK7o48730n9v7OemcP++PouH9f4G/oVSGF4Nk3BBcnQ==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
@@ -885,6 +901,7 @@ packages:
       date-fns: 2.29.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-tooltip: 5.10.1_biqbaboplfbrettd7655fr4n2y
       tinycolor2: 1.6.0
     dev: false
 
@@ -898,7 +915,7 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-github-calendar/3.4.0_biqbaboplfbrettd7655fr4n2y:
+  /react-github-calendar/3.4.0_snf7vdq6ampwhmiij6nj52ckcm:
     resolution: {integrity: sha512-3HiUjZAivwcDhNdL3Nwz5MNSUolOwsIuyrBnq6fYfJJE7l0CONHKX9N0lJ/4wpJWZBBYMHOmvFM10sNCRPpYaQ==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
@@ -909,8 +926,9 @@ packages:
         optional: true
     dependencies:
       react: 18.2.0
-      react-activity-calendar: 1.7.0_biqbaboplfbrettd7655fr4n2y
+      react-activity-calendar: 1.7.0_snf7vdq6ampwhmiij6nj52ckcm
       react-dom: 18.2.0_react@18.2.0
+      react-tooltip: 5.10.1_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /react-icons/4.8.0_react@18.2.0:
@@ -932,6 +950,18 @@ packages:
       prismjs: 1.29.0
       react: 18.2.0
       refractor: 3.6.0
+    dev: false
+
+  /react-tooltip/5.10.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-bfEc3L0yTcjW2jTu69AJo+GVy5F88MgN3gmFo6vQnq2i6GNlCZlagQp60Vf8LFbr36fjV0TYJzF3QYmwG7ItaA==}
+    peerDependencies:
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
+    dependencies:
+      '@floating-ui/dom': 1.2.5
+      classnames: 2.3.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react/18.2.0:
