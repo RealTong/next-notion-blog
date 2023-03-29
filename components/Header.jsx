@@ -61,7 +61,7 @@ function Header() {
                 <p>I'm Tong.</p>
             </div>
             <div className={"flex flex-col justify-between mt-6"}>
-                <p>🎒 Student / 💻Web Developer</p>
+                <p>🎒 Student / 💻 Web Developer</p>
                 <p>I like making interesting projects.</p>
             </div>
             <div className={"flex flex-row max-w-full flex-nowrap sm:flex-wrap justify-start mt-2"}>
@@ -72,7 +72,7 @@ function Header() {
                                 key={index}
                                 href={brand.link}
                                 target={"_blank"}
-                                className={`decoration-none block flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors dark:bg-gray-50/10 hover:text-white ${brand.css}`}>
+                                className={`decoration-none flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors dark:bg-gray-50/10 hover:text-white ${brand.css}`}>
                                 {brand.brandIcon}
                                 <span className={"ml-1 hidden md:block"}>{brand.brandName}</span>
                             </a>

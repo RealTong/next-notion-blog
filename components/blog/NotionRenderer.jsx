@@ -51,10 +51,16 @@ function NotionRenderer({block}) {
                 </ul>
             )
         case "numbered_list_item":
+            console.log("block.numbered_list_item: ",JSON.stringify(block.numbered_list_item))
             return (
                 <ol>
                     <li>
                         <Text text={block.numbered_list_item.rich_text} />
+                        {
+                            block.numbered_list_item.children?.map((block) => (
+                                <Fragment key={block.id}>{NotionRenderer(block)}</Fragment>
+                            ))
+                        }
                     </li>
                 </ol>
             )

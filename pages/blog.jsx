@@ -7,10 +7,10 @@ import Header from "../components/blog/Header";
 function blog(props) {
     return (
         <div className={"bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
-            <div className={"flex flex-col justify-between max-w-3xl w-screen mx-auto px-6 py-3"}>
+            <div className={"flex flex-col h-full justify-between max-w-3xl w-screen mx-auto pb-3"}>
                 <Header/>
-                <p className={"text-4xl font-bold my-10 font-mono"}>Blog posts</p>
-                <div className={"h-full"}>
+                <div className={"w-full md:max-w-3xl px-3"}>
+                    <p className={"text-4xl font-bold my-10 font-mono"}>Blog posts</p>
                     {
                         props.latestPostTitle.map((post,index) => {
                             return (

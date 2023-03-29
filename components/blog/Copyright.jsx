@@ -2,7 +2,7 @@ function BlogCopyright({page, link}) {
     return (
         <div
             className="relative -mb-4 mt-4 overflow-hidden rounded bg-light-400 p-4 text-sm dark:bg-dark-400 md:-mx-4 md:rounded-none">
-            <div className="absolute top-0 right-0 w-64 translate-x-10 translate-y-3 transform opacity-10">
+            <div className="absolute top-0 right-12 w-64 translate-x-10 translate-y-3 transform opacity-10">
                 <svg
                     className="fill-current"
                     viewBox="0 0 800 704"

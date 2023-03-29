@@ -3,6 +3,7 @@ import Projects from "../components/Projects";
 import LatestPosts from "../components/LatestPosts";
 import Footer from "../components/Footer";
 import {getPosts} from "../lib/notion";
+import Activity from "../components/Activity";
 
 export default function Index(props) {
     return (
@@ -10,6 +11,7 @@ export default function Index(props) {
             className={"flex flex-col font-mono justify-between min-w-0 w-full h-full p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
             <div className={"mx-auto p-6"}>
                 <Header/>
+                <Activity/>
                 <Projects/>
                 <LatestPosts latestPostList={
                     props.latestPosts.map((post) => {
