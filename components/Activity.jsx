@@ -1,5 +1,6 @@
 import {useEffect, useState, useCallback, useMemo} from "react";
 import dynamic from "next/dynamic";
+import NowPlaying from "./Spotify";
 
 const GithubCalendar = dynamic(() => import("react-github-calendar"), {
     ssr: false
@@ -74,9 +75,10 @@ function Activity() {
         <div className={""}>
             <p className={"my-4 text-3xl font-bold"}>Activity</p>
             <div className={"flex justify-center"}>
-                {
-                    getContributionGraph()
-                }
+                {/*{*/}
+                {/*    getContributionGraph()*/}
+                {/*}*/}
+                <NowPlaying/>
             </div>
         </div>
     )
