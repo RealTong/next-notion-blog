@@ -5,24 +5,18 @@ export default async function handler(req,res) {
 
     if (response.status === 204 || response.status > 400) {
         res.status(200).json({ isPlaying: false });
-        // return new Response(JSON.stringify({ isPlaying: false }), {
-        //     status: 200,
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        // });
+        return new Response(JSON.stringify({ isPlaying: false }), {
+            status: 200,
+            headers: {
+                "content-type": "application/json",
+            },
+        });
     }
 
     const song = await response.json();
 
     if (song.item === null) {
         res.status(200).json({ isPlaying: false });
-        // return new Response(JSON.stringify({ isPlaying: false }), {
-        //     status: 200,
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        // });
     }
 
     const isPlaying = song.is_playing;
@@ -40,22 +34,4 @@ export default async function handler(req,res) {
         songUrl,
         title,
     });
-
-    // return new Response(
-    //     JSON.stringify({
-    //         album,
-    //         albumImageUrl,
-    //         artist,
-    //         isPlaying,
-    //         songUrl,
-    //         title,
-    //     }),
-    //     {
-    //         status: 200,
-    //         headers: {
-    //             "content-type": "application/json",
-    //             "cache-control": "public, s-maxage=60, stale-while-revalidate=30",
-    //         },
-    //     }
-    // );
 }

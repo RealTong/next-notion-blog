@@ -7,7 +7,7 @@ function Post({title, link, date},key){
            key={key}
            className={"flex justify-between p-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-neutral-600"}
         >
-            <p className={"md:truncate md:w-2/3"}>{title}</p>
+            <p className={"md:truncate md:w-2/3 font-['霞鹜文楷']"}>{title}</p>
             <p className={"font-normal hidden md:block"}>{date}</p>
         </a>
     )
