@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'LXGW WenKai';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../public/fonts/LXGWWenKai-Regular.woff2') format('woff2'), url('../public/fonts/LXGWWenKai-Regular.woff') format('woff');
+}
+
+.weiKaiFont {
+    font-family: 'LXGW WenKai', serif;
+}
 
 :root {
     --c-bg: #ffffff;
