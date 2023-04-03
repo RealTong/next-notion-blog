@@ -1,15 +1,16 @@
 import {BsArrowUpRight} from "react-icons/bs";
+import Link from "next/link";
 
 function Post({title, link, date},key){
     return (
-        <a href={`/blog/${link}`}
+        <Link href={`/blog/${link}`}
            target={"_self"}
            key={key}
            className={"flex justify-between p-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-neutral-600"}
         >
             <p className={"md:truncate md:w-2/3 weiKaiFont"}>{title}</p>
             <p className={"font-normal hidden md:block"}>{date}</p>
-        </a>
+        </Link>
     )
 }
 function LatestPosts({latestPostList}) {
@@ -17,9 +18,9 @@ function LatestPosts({latestPostList}) {
         <>
             <div className={"flex justify-between my-4 text-3xl font-bold pb-4 w-full"}>
                 <p>Latest Posts</p>
-                <a href="/blog" target={"_self"} className={"text-neutral-800 hover:text-neutral-600 transition-colors dark:text-gray-300"}>
+                <Link href="/blog" target={"_self"} className={"text-neutral-800 hover:text-neutral-600 transition-colors dark:text-gray-300"}>
                     <BsArrowUpRight size={24}/>
-                </a>
+                </Link>
             </div>
             <div>
                 {

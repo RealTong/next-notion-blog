@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function Text({text}) {
     if (!text) return null
 
@@ -23,9 +25,9 @@ function Text({text}) {
                 style={color !== 'default' ? {color} : {}}
             >
         {text.link ? (
-            <a href={text.link.url} target="_blank" rel="noopener noreferrer">
+            <Link href={text.link.url} target="_blank" rel="noopener noreferrer">
                 {text.content}
-            </a>
+            </Link>
         ) : (
             text.content
         )}

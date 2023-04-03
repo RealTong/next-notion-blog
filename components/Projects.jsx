@@ -1,5 +1,6 @@
 import {TbBrandDocker, TbBrandWechat} from "react-icons/tb";
 import {SiAdguard} from "react-icons/si";
+import Link from "next/link";
 
 const projectList = [
     {
@@ -47,7 +48,7 @@ function Projects() {
 
 function Project({icon, name, description, link},key) {
     return (
-        <a href={link}
+        <Link href={link}
            target={"_blank"}
            key={key}
            className={"flex px-4 py-3 min-w-min rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20"}
@@ -59,7 +60,7 @@ function Project({icon, name, description, link},key) {
                     <p className={" op-50 font-normal text-sm"}>{description}</p>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
 

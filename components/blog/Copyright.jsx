@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function BlogCopyright({page, link}) {
     return (
         <div
@@ -24,9 +26,9 @@ function BlogCopyright({page, link}) {
                 {page.properties.name.title[0].plain_text} - RealTong
             </div>
             <div className="leading-5 opacity-90">
-                <a href={link} target="_blank" rel="noopener noreferrer">
+                <Link href={link} target="_blank" rel="noopener noreferrer">
                     {link}
-                </a>
+                </Link>
             </div>
             <div className="my-4 grid grid-cols-3 opacity-90 md:w-2/3">
                 <div>

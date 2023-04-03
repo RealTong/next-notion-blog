@@ -1,6 +1,6 @@
 import {getTopTracks} from '../../lib/spotify';
 
-export default async (_, res) => {
+const topTracks = async (_, res) => {
     const {items} = await getTopTracks();
     console.log("response", items)
 
@@ -12,3 +12,5 @@ export default async (_, res) => {
 
     return res.status(200).json({tracks});
 };
+
+export default topTracks;

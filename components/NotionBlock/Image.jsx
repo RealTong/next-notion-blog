@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const getMediaCtx = (value) => {
     const src = value.type === 'external' ? value.external.url : value.file.url
     const expire = value.type === 'file' ? value.file.expiry_time : null
@@ -11,7 +13,7 @@ function NotionImage({value}){
     return (
         <figure>
             {width && height ? (
-                <img
+                <Image
                     src={imageSrc}
                     alt={imageCaption}
                     width={width}
@@ -19,7 +21,7 @@ function NotionImage({value}){
                     className="rounded"
                 />
             ) : (
-                <img src={imageSrc} alt={imageCaption} className="rounded" />
+                <Image src={imageSrc} alt={imageCaption} className="rounded" />
             )}
             {imageCaption && (
                 <figcaption className="text-center">{imageCaption}</figcaption>

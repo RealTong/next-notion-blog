@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 function Footer({align}){
     return(
         <>
             <p className={`mt-10 w-full text-${align}`}>
-                Copyright <a href="https://realtong.cn" className={"underline"}>Tong</a>{` \u00A9 ${getYear()}`}.
-                Design by <a href="https://ddiu.io/" className={"hover:text-[#789388] underline"}>ddiu.io</a>
+                Copyright <Link href="https://realtong.cn" className={"underline"}>Tong</Link>{` \u00A9 ${getYear()}`}.
+                Design by <Link href="https://ddiu.io/" className={"hover:text-[#789388] underline"}>ddiu.io</Link>
             </p>
         </>
     )

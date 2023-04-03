@@ -1,4 +1,6 @@
 import { FiLink, FiLink2 } from 'react-icons/fi'
+import Link from "next/link";
+import Image from "next/image";
 
 const Bookmark = ({ value }) => {
     const { url } = value
@@ -6,7 +8,7 @@ const Bookmark = ({ value }) => {
 
     if (error)
         return (
-            <a
+            <Link
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -21,12 +23,12 @@ const Bookmark = ({ value }) => {
           <FiLink2 className="inline mr-2" />
           <span>{url}</span>
         </span>
-            </a>
+            </Link>
         )
 
     if (!data)
         return (
-            <a
+            <Link
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -41,14 +43,14 @@ const Bookmark = ({ value }) => {
                     </div>
                 </div>
                 <div className="h-28 hidden animate-pulse overflow-hidden bg-gray-200 dark:bg-dark-400 sm:block" />
-            </a>
+            </Link>
         )
 
     const { title, description, favicon, open_graph } = data
     const images = open_graph?.images ?? []
 
     return (
-        <a
+        <Link
             href={url}
             target="_blank"
             rel="noopener noreferrer"
@@ -63,7 +65,7 @@ const Bookmark = ({ value }) => {
                 </div>
                 <div className="flex h-6 items-center space-x-2 overflow-hidden truncate text-sm opacity-70">
                     {favicon ? (
-                        <img src={favicon} className="h-4 w-4" alt="favicon" />
+                        <Image src={favicon} className="h-4 w-4" alt="favicon" />
                     ) : (
                         <FiLink size={17} />
                     )}
@@ -74,14 +76,14 @@ const Bookmark = ({ value }) => {
             </div>
             {images && images.length > 0 && (
                 <div className="hidden overflow-hidden rounded border-l border-gray-400/50 sm:block">
-                    <img
+                    <Image
                         src={images[0].url}
                         alt={title}
                         className="m-0 h-28 w-full rounded border-gray-400/50 object-cover object-center"
                     />
                 </div>
             )}
-        </a>
+        </Link>
     )
 }
 
