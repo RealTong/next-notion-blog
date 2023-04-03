@@ -22,7 +22,7 @@ export default function Index(props) {
                         }
                     })
                 }/>
-                <Footer align={"left"}/>
+                <Footer/>
             </div>
         </div>
     )

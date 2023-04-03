@@ -35,7 +35,7 @@ function Post(props) {
                 <div
                     className={"flex flex-col justify-between min-w-0 w-full h-full p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
                 </div>
-                <Footer align={"center"}/>
+                <Footer/>
             </main>
         </div>
     )

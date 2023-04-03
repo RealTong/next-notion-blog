@@ -26,7 +26,7 @@ function blog(props) {
                         })
                     }
                 </div>
-                <Footer align={"center"}/>
+                <Footer/>
             </div>
         </div>
     )
