@@ -2,8 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ["i.scdn.co", "cdn.sanity.io", "mosaic.scdn.co"],
+  i18n: {
+    locales: ["en-US","zh-CN", "zh-TW"],
+    defaultLocale: "en-US",
+    localeDetection: false,
   },
 }
 

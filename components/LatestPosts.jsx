@@ -1,5 +1,6 @@
 import {BsArrowUpRight} from "react-icons/bs";
 import Link from "next/link";
+import {useI18n} from "../pages/_app";
 
 function Post({title, link, date},key){
     return (
@@ -14,10 +15,11 @@ function Post({title, link, date},key){
     )
 }
 function LatestPosts({latestPostList}) {
+    const i18n = useI18n()
     return(
         <>
             <div className={"flex justify-between my-4 text-3xl font-bold pb-4 w-full"}>
-                <p>Latest Posts</p>
+                <p>{i18n.index.latestPosts.title}</p>
                 <Link href="/blog" target={"_self"} className={"text-neutral-800 hover:text-neutral-600 transition-colors dark:text-gray-300"}>
                     <BsArrowUpRight size={24}/>
                 </Link>

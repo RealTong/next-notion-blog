@@ -7,6 +7,7 @@ import {
 } from "react-icons/tb";
 import {HiOutlineMail} from "react-icons/hi";
 import Link from "next/link";
+import {useI18n} from "../pages/_app";
 
 const brandList = [
     {
@@ -52,18 +53,18 @@ const brandList = [
         css: "hover:bg-[#FB7299]"
     }
 ]
-
 function Header() {
+    const i18n = useI18n();
     return (
         <div className={"mt-20"}>
             <div className={"text-5xl font-bold"}>
                 <p>👋</p>
-                <p>Hello,</p>
-                <p>I&apos;m Tong.</p>
+                <p>{i18n.index.header.hello},</p>
+                <p>{i18n.index.header.description}</p>
             </div>
             <div className={"flex flex-col justify-between mt-6"}>
-                <p>🎒 Student / 💻 Web Developer</p>
-                <p>I like making interesting projects.</p>
+                <p>{i18n.index.header.identity}</p>
+                <p>{i18n.index.header.hobby}</p>
             </div>
             <div className={"flex flex-row max-w-full flex-nowrap sm:flex-wrap justify-start mt-2"}>
                 {

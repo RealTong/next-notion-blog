@@ -1,0 +1,24 @@
+{
+  "index": {
+    "header": {
+      "title": "頁頭",
+      "hello": "你好",
+      "description": "我是Tong。",
+      "identity": "\uD83C\uDF92 學生 / \uD83D\uDCBB 開發者",
+      "hobby": "我喜歡製作有趣的項目。"
+    },
+    "activity": {
+      "title": "活動"
+    },
+    "projects": {
+      "title": "項目"
+    },
+    "latestPosts": {
+      "title": "最新文章"
+    }
+  },
+  "footer": {
+    "copyright": "版權所有",
+    "design_by": "設計"
+  }
+}

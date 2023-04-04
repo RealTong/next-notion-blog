@@ -1,6 +1,7 @@
 import {TbBrandDocker, TbBrandWechat} from "react-icons/tb";
 import {SiAdguard} from "react-icons/si";
 import Link from "next/link";
+import {useI18n} from "../pages/_app";
 
 const projectList = [
     {
@@ -24,9 +25,10 @@ const projectList = [
 ]
 
 function Projects() {
+    const i18n = useI18n()
     return (
         <div>
-            <p className={"my-4 text-3xl font-bold"}>Projects</p>
+            <p className={"my-4 text-3xl font-bold"}>{i18n.index.projects.title}</p>
             <div className={"grid gap-4 grid-cols-1 sm:grid-cols-2"}>
                 {
                     projectList.map((project, index) => {

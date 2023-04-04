@@ -1,0 +1,24 @@
+{
+  "index": {
+    "header": {
+      "title": "Header",
+      "hello": "Hello",
+      "description": "I'm Tong.",
+      "identity": "\uD83C\uDF92 Student / \uD83D\uDCBB Web Developer",
+      "hobby": "I like making interesting projects."
+    },
+    "activity": {
+      "title": "Activity"
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "latestPosts": {
+      "title": "Latest Posts"
+    }
+  },
+  "footer": {
+    "copyright": "Copyright",
+    "design_by": "Design by"
+  }
+}
