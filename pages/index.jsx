@@ -28,14 +28,14 @@ export default function Index(props) {
                 <meta name="twitter:url" content="https://realtong.cn/"/>
                 <meta name="twitter:title" content="RealTong"/>
                 <meta name="twitter:description" content="RealTong's Site"/>
-                <meta name="twitter:image" content="https://realtong.cn/logo192.png"/>
+                <meta name="twitter:image" content="https://realtong.cn/logo192.jpg"/>
                 <meta name="twitter:creator" content="@RealTong_run"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:title" content="RealTong"/>
                 <meta property="og:description" content="RealTong's Blog"/>
                 <meta property="og:site_name" content="RealTong"/>
                 <meta property="og:url" content="https://realtong.cn/"/>
-                <meta property="og:image" content="https://realtong.cn/logo192.png"/>
+                <meta property="og:image" content="https://realtong.cn/logo192.jpg"/>
             </Head>
             <div>
                 <Script async defer data-website-id="745797e5-e399-4b37-8ee5-155c8bf97a58" src="https://umami.realtong.cn/umami.js"></Script>
