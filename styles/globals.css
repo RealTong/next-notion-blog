@@ -25,15 +25,6 @@ html {
     background-color: var(--c-bg);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --c-bg: #212121;
-        --c-scroll: #333333;
-        --c-scroll-hover: #555555;
-        color-scheme: dark;
-    }
-}
-
 img{
     transition: 0.5s;
 }
