@@ -38,11 +38,11 @@ export default function Index(props) {
                 <meta property="og:image" content="https://realtong.cn/logo192.jpg"/>
             </Head>
             <div>
-                <Script async defer data-website-id="745797e5-e399-4b37-8ee5-155c8bf97a58" src="https://umami.realtong.cn/umami.js"></Script>
+                <Script async defer data-website-id="745797e5-e399-4b37-8ee5-155c8bf97a58" strategy={"lazyOnload"} src="https://umami.realtong.cn/umami.js"></Script>
             </div>
             <div
-                className={"flex flex-col font-mono justify-between min-w-0 w-full h-full p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
-                <div className={"mx-auto p-6"}>
+                className={"flex flex-col font-mono justify-between min-w-0 w-full h-screen overflow-y-scroll p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
+                <div className={"m-auto p-6"}>
                     <Header/>
                     <Activity/>
                     <Projects/>

@@ -4,6 +4,7 @@ import NotionRenderer from "../../components/blog/NotionRenderer";
 import probeImageSize from "../../lib/imaging";
 import Header from "../../components/blog/Header";
 import Footer from "../../components/Footer";
+import {highlight} from "../../lib/shiki";
 
 function Post(props) {
     const host = "wst.sh"
@@ -67,6 +68,19 @@ export async function getStaticProps({params}) {
 
             const {width, height} = await probeImageSize(src)
             value['dim'] = {width, height}
+            block[type] = value
+        })
+    )
+    // 渲染Code block
+    await Promise.all(
+        blocks.filter(block => block.type === 'code').map(async (block) => {
+            const {type} = block
+            const value = block[type]
+            value['dom'] = await highlight(
+                value.rich_text[0].plain_text,
+                'github-dark',
+                value.language,
+            )
             block[type] = value
         })
     )

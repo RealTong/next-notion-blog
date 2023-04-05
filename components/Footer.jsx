@@ -21,7 +21,7 @@ function Footer() {
         html.classList.toggle("dark");
     }
     return (
-        <div className={"flex mt-10"}>
+        <footer className={"flex mt-10"}>
             <p className={`w-full text-left`}>
                 {i18n.footer.copyright}{' '}
                 <Link href="https://realtong.cn" className="underline">
@@ -44,10 +44,10 @@ function Footer() {
                     }
                 </select>
             </div>
-            <button className={"text-2xl border-gray-300 p-2 rounded leading-tight"} onClick={toggleTheme}>
+            <button className={"text-2xl border-gray-300 p-2 rounded leading-tight"} onClick={toggleTheme} aria-label={"主题切换器"}>
                 <CgDarkMode/>
             </button>
-        </div>
+        </footer>
     )
 }
 

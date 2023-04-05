@@ -1,12 +1,9 @@
 import Text from "../NotionBlock/Text";
 import NotionImage, {getMediaCtx} from "../NotionBlock/Image";
-import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import Bookmark from "../NotionBlock/Bookmark";
 import {Fragment} from "react";
 
 function NotionRenderer({block}) {
-    // console.log(block.block)
     switch (block.type) {
         case "paragraph":
             return <Text text={block.paragraph.rich_text}/>
@@ -36,9 +33,9 @@ function NotionRenderer({block}) {
             )
         case 'code':
             return (
-                <SyntaxHighlighter language={block.code.language} style={nord}>
-                    {block.code.rich_text[0].plain_text}
-                </SyntaxHighlighter>
+                <div className={"bg-gray-200 my-10 shadow shadow-gray-800 overflow-scroll text-sm"}
+                    dangerouslySetInnerHTML={{ __html: block.code.dom}}
+                />
             )
         case 'bookmark':
             return <Bookmark value={value} />
@@ -51,7 +48,6 @@ function NotionRenderer({block}) {
                 </ul>
             )
         case "numbered_list_item":
-            console.log("block.numbered_list_item: ",JSON.stringify(block.numbered_list_item))
             return (
                 <ol>
                     <li>

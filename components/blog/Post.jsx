@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 function Post({slug, title, preview, date, author, tag}) {
