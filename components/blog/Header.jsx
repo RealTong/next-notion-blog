@@ -48,7 +48,7 @@ function Header() {
                         })
                     }
                 </div>
-                <Link href="/"
+                <Link href="/feed"
                    target="_blank"
                    className={"p-2.5 hover:text-gray-400"}
                    rel={"noopener noreferrer"}>
