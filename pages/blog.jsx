@@ -7,9 +7,9 @@ import Header from "../components/blog/Header";
 function blog(props) {
     return (
         <div className={"bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
-            <div className={"flex flex-col h-full justify-between max-w-3xl w-screen mx-auto pb-3"}>
+            <div className={"flex flex-col h-full justify-between w-screen pb-3"}>
                 <Header/>
-                <div className={"w-full md:max-w-3xl px-3"}>
+                <div className={"w-full px-3 max-w-5xl mx-auto"}>
                     <p className={"text-4xl font-bold my-10 font-mono"}>Blog posts</p>
                     {
                         props.latestPostTitle.map((post,index) => {
@@ -25,8 +25,8 @@ function blog(props) {
                             )
                         })
                     }
+                    <Footer/>
                 </div>
-                <Footer/>
             </div>
         </div>
     )
