@@ -5,40 +5,46 @@ import probeImageSize from "../../lib/imaging";
 import Header from "../../components/blog/Header";
 import Footer from "../../components/Footer";
 import {highlight} from "../../lib/shiki";
+import Head from "next/head";
 
 function Post(props) {
     const host = "wst.sh"
     const page = props.page
     if (!page) return <div>loading...</div>
     return (
-        <div className={"mx-auto p-6 w-full md:max-w-3xl"}>
+        <>
+            <Head>
+                <title>{page.properties.name.title[0].plain_text}</title>
+            </Head>
             <Header/>
-            <main className={"mt-3 border p-3"}>
-                <div className={""}>
-                    <h1 className={"text-3xl font-bold"}>{page.properties.name.title[0].plain_text}</h1>
-                </div>
-                <div>
-                    {
-                        props.blocks.map((block, index) => {
-                            return (
-                                <>
-                                    <br key={index}/>
-                                    <NotionRenderer key={index} block={block}/>
-                                </>
-                            )
-                        })
-                    }
-                    <Copyright
-                        link={`https://${host}/blog/${page.properties.slug.rich_text[0].text.content}`}
-                        page={page}
-                    />
-                </div>
-                <div
-                    className={"flex flex-col justify-between min-w-0 w-full h-full p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
-                </div>
-                <Footer/>
-            </main>
-        </div>
+            <div className={"mx-auto p-6 w-full md:max-w-3xl"}>
+                <main className={"mt-3 border p-3"}>
+                    <div className={""}>
+                        <h1 className={"text-3xl font-bold"}>{page.properties.name.title[0].plain_text}</h1>
+                    </div>
+                    <div>
+                        {
+                            props.blocks.map((block, index) => {
+                                return (
+                                    <>
+                                        <br key={index}/>
+                                        <NotionRenderer key={index} block={block}/>
+                                    </>
+                                )
+                            })
+                        }
+                        <Copyright
+                            link={`https://${host}/blog/${page.properties.slug.rich_text[0].text.content}`}
+                            page={page}
+                        />
+                    </div>
+                    <div
+                        className={"flex flex-col justify-between min-w-0 w-full h-full p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300"}>
+                    </div>
+                    <Footer/>
+                </main>
+            </div>
+        </>
     )
 }
 

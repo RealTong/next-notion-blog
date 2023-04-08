@@ -11,7 +11,7 @@ export default function Index(props) {
     return (
         <>
             <Head>
-                <title>RealTong</title>
+                <title>RealTong&apos;s Home</title>
                 <meta name="description" content="RealTong's Site"/>
                 <meta name="keywords" content="RealTong, Blog, Notion, Next.js, TailwindCSS, NotionCMS"/>
                 <meta name="author" content="RealTong"/>
