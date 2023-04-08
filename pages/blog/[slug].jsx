@@ -24,12 +24,9 @@ function Post(props) {
                     </div>
                     <div>
                         {
-                            props.blocks.map((block, index) => {
+                            props.blocks.map((block) => {
                                 return (
-                                    <>
-                                        <br key={index}/>
-                                        <NotionRenderer key={index} block={block}/>
-                                    </>
+                                    <NotionRenderer key={block.id} block={block}/>
                                 )
                             })
                         }
@@ -54,7 +51,7 @@ export const getStaticPaths = async () => {
         paths: db.map((p) => ({
             params: {slug: p.properties.slug.rich_text[0].text.content},
         })),
-        fallback: 'blocking',
+        fallback: true,
     }
 }
 
@@ -62,8 +59,8 @@ export async function getStaticProps({params}) {
     const slug = params.slug
     const database = await getPosts(slug)
     const post = database[0]
-    const page = await getPage(post.id)
-    const blocks = await getBlocks(post.id)
+    const page = await getPage(post.id) //bug?
+    const blocks = await getBlocks(post.id) //bug?
     // 探测图片尺寸
     await Promise.all(
         blocks.filter(block => block.type === 'image').map(async (block) => {
@@ -94,7 +91,8 @@ export async function getStaticProps({params}) {
         props: {
             page,
             blocks
-        }
+        },
+        revalidate: 60 * 60 * 24, // blog内容属于不易变更的内容, 一天更新一次(主要是写的垃圾也没人看)
     }
 }
 

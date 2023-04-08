@@ -31,6 +31,15 @@ function generateRSS(posts) {
     });
     return feed.rss2();
 }
+
+export default function FeedPage() {
+    return (
+        <div>
+
+        </div>
+    )
+}
+
 export async function getServerSideProps({res}) {
     res.setHeader(
         'Cache-Control',
@@ -38,20 +47,12 @@ export async function getServerSideProps({res}) {
     )
     const posts = await getPosts();
     const feed = generateRSS(posts);
-
     res.setHeader('Content-Type', 'text/xml')
     res.write(feed)
     res.end()
-
+    console.log("[feed.jsx] Last updated: " + new Date().toLocaleString())
     return {
         props: {}
+        // 这是SSR 每次请求都会在服务端重新调用
     }
 }
-function FeedPage() {
-    return (
-        <div>
-
-        </div>
-    )
-}
-export default FeedPage;

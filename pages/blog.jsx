@@ -11,9 +11,9 @@ function blog(props) {
             <div className={"w-full px-3 max-w-5xl mx-auto"}>
                 <p className={"text-4xl font-bold my-10 font-mono"}>Blog posts</p>
                 {
-                    props.latestPostTitle.map((post, index) => {
+                    props.latestPostTitle.map((post) => {
                         return (
-                            <Post key={index}
+                            <Post key={post.id}
                                   slug={post.properties.slug.rich_text[0].plain_text}
                                   title={post.properties.name.title[0].plain_text}
                                   preview={post.properties.preview.rich_text[0].plain_text}
@@ -32,10 +32,12 @@ function blog(props) {
 
 export async function getStaticProps() {
     const latestPostTitle = await getPosts();
+    console.log("[blog.jsx] Last updated: " + new Date().toLocaleString())
     return {
         props: {
             latestPostTitle
-        }
+        },
+        revalidate: 60 * 60 // 1 hour
     }
 }
 

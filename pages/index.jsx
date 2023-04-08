@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Projects from "../components/Projects";
 import LatestPosts from "../components/LatestPosts";
 import Footer from "../components/Footer";
-import {getPosts} from "../lib/notion";
+import {getLatestPostList} from "../lib/notion";
 import Activity from "../components/Activity";
 
 export default function Index(props) {
@@ -63,10 +63,12 @@ export default function Index(props) {
 }
 
 export async function getStaticProps() {
-    const latestPosts = await getPosts();
+    const latestPosts = await getLatestPostList();
+    console.log("[index.jsx] Last updated: " + new Date().toLocaleString())
     return {
         props: {
             latestPosts
-        }
+        },
+        revalidate: 60 * 60 * 24 // 24 hours 之后的下一次请求会重新生成页面(Next JS ISR)
     }
 }

@@ -15,7 +15,7 @@ const nextConfig = {
         ]
     },
     experimental: {
-        serverComponentsExternalPackages: ['shiki', 'vscode-oniguruma']
+        serverComponentsExternalPackages: ['shiki']
     }
 }
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
