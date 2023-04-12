@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "./realtong-app"
+    "baseUrl": "./realtong-app",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

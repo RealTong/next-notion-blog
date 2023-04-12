@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "lxgw-wenkai-webfont/style.css";
+@import "style.css";
 
 .weiKaiFont {
     font-family: 'LXGW WenKai', serif;

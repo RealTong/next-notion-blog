@@ -6,8 +6,6 @@ import {
     TbBrandTwitter
 } from "react-icons/tb";
 import {HiOutlineMail} from "react-icons/hi";
-import Link from "next/link";
-import {useI18n} from "../pages/_app";
 
 const brandList = [
     {
@@ -54,7 +52,31 @@ const brandList = [
     }
 ]
 function Header() {
-    const i18n = useI18n();
+    const i18n = {
+            "index": {
+                "header": {
+                    "title": "Header",
+                    "hello": "Hello",
+                    "description": "I'm Tong.",
+                    "identity": "\uD83C\uDF92 Student / \uD83D\uDCBB Web Developer",
+                    "hobby": "I like making interesting projects."
+                },
+                "activity": {
+                    "title": "Activity"
+                },
+                "projects": {
+                    "title": "Projects"
+                },
+                "latestPosts": {
+                    "title": "Latest Posts"
+                }
+            },
+            "footer": {
+                "copyright": "Copyright",
+                "design_by": "Design by"
+            }
+        }
+    ;
     return (
         <div className={"mt-20"}>
             <div className={"text-5xl font-bold"}>
@@ -70,14 +92,14 @@ function Header() {
                 {
                     brandList.map((brand, index) => {
                         return(
-                            <Link
+                            <a
                                 key={index}
                                 href={brand.link}
                                 target={"_blank"}
                                 className={`decoration-none flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors dark:bg-gray-50/10 hover:text-white ${brand.css}`}>
                                 {brand.brandIcon}
                                 <span className={"ml-1 hidden md:block"}>{brand.brandName}</span>
-                            </Link>
+                            </a>
                         )
                     })
                 }
