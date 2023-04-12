@@ -1,0 +1,84 @@
+---
+import en_US from "../locales/en-US.json";
+import {
+  TbBrandBilibili, TbBrandDiscord,
+  TbBrandFigma,
+  TbBrandGithub,
+  TbBrandInstagram,
+  TbBrandTwitter
+} from "react-icons/tb";
+import {HiOutlineMail} from "react-icons/hi";
+
+const brandList = [
+  {
+    BrandIcon: HiOutlineMail,
+    brandName: "Email",
+    link: "mailto:i@realtong.cn",
+    css: "hover:bg-[#34A853]"
+  },
+  {
+    BrandIcon: TbBrandGithub,
+    brandName: "Github",
+    link: "https://github.com/RealTong",
+    css: "hover:bg-[#000000]"
+  },
+  {
+    BrandIcon: TbBrandFigma,
+    brandName: "Figma",
+    link: "https://www.figma.com/@wulanren",
+    css: "hover:bg-[#F24E1E]"
+  },
+  {
+    BrandIcon: TbBrandTwitter,
+    brandName: "Twitter",
+    link: "https://twitter.com/RealTong_run",
+    css: "hover:bg-[#1DA1F2]"
+  },
+  {
+    BrandIcon: TbBrandInstagram,
+    brandName: "Instagram",
+    link: "https://www.instagram.com/realtong_run/",
+    css: "hover:bg-[#d6249f]"
+  },
+  {
+    BrandIcon: TbBrandDiscord,
+    brandName: "Discord",
+    link: "https://discord.gg/SF9TqBnNSJ",
+    css: "hover:bg-[#7289DA]"
+  },
+  {
+    BrandIcon: TbBrandBilibili,
+    brandName: "Bilibili",
+    link: "https://space.bilibili.com/195743150",
+    css: "hover:bg-[#FB7299]"
+  }
+]
+const i18n = en_US;
+---
+<div class={"mt-20"}>
+    <div class={"text-5xl font-bold"}>
+        <p>👋</p>
+        <p>{i18n.index.header.hello},</p>
+        <p>{i18n.index.header.description}</p>
+    </div>
+    <div class={"flex flex-col justify-between mt-6"}>
+        <p>{i18n.index.header.identity}</p>
+        <p>{i18n.index.header.hobby}</p>
+    </div>
+    <div class={"flex flex-row max-w-full flex-nowrap sm:flex-wrap justify-start mt-2"}>
+      {
+        brandList.map(({BrandIcon, brandName, link, css}, index) => {
+          return (
+                  <a
+                          key={index}
+                          href={link}
+                          target={"_blank"}
+                          class={`decoration-none flex flex-row flex-nowrap p-2 mr-2 rounded-md bg-gray-50 leading-[1rem] transition-colors dark:bg-gray-50/10 hover:text-white ${css}`}>
+                    <BrandIcon/>
+                      <span class={"ml-1 hidden md:block"}>{brandName}</span>
+                  </a>
+          )
+        })
+      }
+    </div>
+</div>

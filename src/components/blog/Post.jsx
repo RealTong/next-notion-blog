@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 function Post({slug, title, preview, date, author, tag}) {
     return (
         <div

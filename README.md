@@ -2,7 +2,7 @@
 # realtong.cn
 
 ---
-* Framework: Next.js
+* Framework: Astro
 * CMS: Notion
 * Styling: Tailwind CSS
 * Deployment: Vercel

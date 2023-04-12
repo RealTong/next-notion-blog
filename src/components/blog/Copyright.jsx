@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 function BlogCopyright({page, link}) {
     return (
         <div

@@ -1,6 +1,4 @@
 import { FiLink, FiLink2 } from 'react-icons/fi'
-import Link from "next/link";
-import Image from "next/image";
 
 const Bookmark = ({ value }) => {
     const { url } = value

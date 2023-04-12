@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 function Text({text}) {
     if (!text) return null
 

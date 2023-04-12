@@ -1,7 +1,7 @@
 import {Client} from "@notionhq/client"
 
-const notion = new Client({auth: process.env.NOTION_KEY})
-const databaseId = process.env.NOTION_DATABASE_ID
+const notion = new Client({auth: import.meta.env.NOTION_API_KEY})
+const databaseId = import.meta.env.NOTION_DATABASE_ID
 
 async function getLatestPostList(count){
     const response = await notion.databases.query({

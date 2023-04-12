@@ -1,6 +1,5 @@
 import {TbBrandDocker, TbBrandWechat} from "react-icons/tb";
 import {SiAdguard} from "react-icons/si";
-import Link from "next/link";
 import {useI18n} from "../pages/_app";
 
 const projectList = [

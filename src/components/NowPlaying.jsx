@@ -1,5 +1,5 @@
-import MusicBar from "./MusicBar";
-import Link from "next/link";
+import MusicBar from "./MusicBar.astro";
+
 
 function NowPlaying({song}) {
     return (

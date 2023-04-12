@@ -1,0 +1,14 @@
+---
+const props = Astro.props;
+
+const { link,key,title,date } = props;
+---
+
+<a href={`/blog/${link}`}
+   target={"_self"}
+   key={key}
+   class={"flex justify-between p-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-neutral-600"}
+>
+    <p class={"md:truncate md:w-2/3 weiKaiFont"}>{title}</p>
+    <p class={"font-normal hidden md:block"}>{date}</p>
+</a>
