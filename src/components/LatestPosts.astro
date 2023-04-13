@@ -1,29 +1,31 @@
 ---
-import {BsArrowUpRight} from "react-icons/bs";
-import Post from "../components/Post.astro";
-import en_US from "../locales/en-US.json";
+import { BsArrowUpRight } from 'react-icons/bs'
+import Post from '../components/Post.astro'
+import en_US from '../locales/en-US.json'
+
 const i18n = en_US
 
-const props = Astro.props;
+const props = Astro.props
 ---
+
 <div>
-    <div class={"flex justify-between my-4 text-3xl font-bold pb-4 w-full"}>
-        <p>{i18n.index.latestPosts.title}</p>
-        <a href="/blog" target={"_self"} aria-label={"blog"} class={"text-neutral-800 hover:text-neutral-600 transition-colors dark:text-gray-300"}>
-            <BsArrowUpRight size={24}/>
-        </a>
-    </div>
-    <div>
-      {
-        props.latestPostList.map((post, index) => {
-          return (
-                  <Post key={index}
-                        date={post.date}
-                        link={post.link}
-                        title={post.title}
-                  />
-          )
-        })
-      }
-    </div>
+  <div class={'flex justify-between my-4 text-3xl font-bold pb-4 w-full'}>
+    <p>{i18n.index.latestPosts.title}</p>
+    <a href="/blog" target={'_self'} aria-label={'blog'} class={'text-neutral-800 hover:text-neutral-600 transition-colors dark:text-gray-300'}>
+      <BsArrowUpRight size={24} />
+    </a>
+  </div>
+  <div>
+    {
+      props.latestPostList.map((post, index) => {
+        return (
+          <Post
+            date={post.properties.date.date.start}
+            link={post.properties.slug.rich_text[0].plain_text}
+            title={post.properties.name.title[0].plain_text}
+          />
+        )
+      })
+    }
+  </div>
 </div>

@@ -1,43 +1,31 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Activity from '../components/Activity.astro';
-import LatestPosts from '../components/LatestPosts.astro';
-import {getLatestPostList} from "../lib/notion.js";
+import HeadMeta from '../components/HeadMeta.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Projects from '../components/Projects.astro'
+import LatestPosts from '../components/LatestPosts.astro'
+import { getLatestPostList } from '../lib/notion.js'
 
-const title = "你好";
-const description = "你好";
-const site = `https://www.wst.sh`;
+const title = "RealTong's Home"
+const description = 'Using Notion as a CMS and Astro as a static site generator.'
+// 从 Notion 获取最新文章列表
+const latestPostData = await getLatestPostList(5)
 
-const latestPostData = getLatestPostList(5);
-// ssr
-export async function getStaticProps() {
-    return {
-        props: {
-            latestPostData
-        }
-    }
-}
+import '../styles/globals.css'
 ---
+
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={`${title ? title + title : title} ${description}`} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={site} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-</head>
-<body>
-<div class={"m-auto p-6"}>
-    <Header/>
-    <Activity/>
-    <LatestPosts latestPostList={latestPostData}/>
-    <Footer/>
-</div>
-</body>
+  <HeadMeta title={title} description={description} />
+  <body class="">
+    <div
+      class={'flex flex-col font-mono justify-between min-w-0 w-full h-screen overflow-y-scroll p-6 bg-[#FFF] dark:bg-[#212121] dark:text-gray-300'}
+    >
+      <div class="m-auto p-6">
+        <Header />
+        <Projects />
+        <LatestPosts latestPostList={latestPostData} />
+        <Footer />
+      </div>
+    </div>
+  </body>
 </html>

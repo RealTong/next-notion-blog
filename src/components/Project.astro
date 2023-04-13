@@ -1,0 +1,21 @@
+---
+const { link, Icon, name, description } = Astro.props.project
+---
+
+<div>
+  <a
+    href={link}
+    target={'_blank'}
+    class={'flex px-4 py-3 min-w-min rounded-md bg-gray-50 transition-colors decoration-none hover:bg-gray-100 dark:bg-gray-50/10 dark:hover:bg-gray-50/20'}
+  >
+    <div class={'flex items-center justify-center'}>
+      <div class={'mr-4 text-4xl'}>
+        <Icon />
+      </div>
+      <div class={'flex-1'}>
+        <p class={'font-medium leading-relaxed'}>{name}</p>
+        <p class={' op-50 font-normal text-sm'}>{description}</p>
+      </div>
+    </div>
+  </a>
+</div>

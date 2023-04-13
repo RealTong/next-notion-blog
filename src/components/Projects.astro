@@ -1,0 +1,39 @@
+---
+import { TbBrandDocker, TbBrandWechat } from 'react-icons/tb'
+import { SiAdguard } from 'react-icons/si'
+import Project from './Project.astro'
+import en_US from '../locales/en-US.json'
+
+const projectList = [
+  {
+    Icon: TbBrandWechat,
+    name: 'wechat-chatgpt',
+    description: 'Use ChatGPT On Wechat via wechaty.',
+    link: 'https://github.com/fuergaosi233/wechat-chatgpt',
+  },
+  {
+    Icon: TbBrandDocker,
+    name: 'Profile',
+    description: 'Self-use Profile.',
+    link: 'https://github.com/RealTong/Profile',
+  },
+  {
+    Icon: SiAdguard,
+    name: 'streaming-unlock',
+    description: 'Break through streaming restrictions.',
+    link: 'https://github.com/RealTong/streaming-unlock',
+  },
+]
+const i18n = en_US
+---
+
+<div>
+  <p class={'my-4 text-3xl font-bold'}>{i18n.index.projects.title}</p>
+  <div class={'grid gap-4 grid-cols-1 sm:grid-cols-2'}>
+    {
+      projectList.map((project, index) => {
+        return <Project project={project} />
+      })
+    }
+  </div>
+</div>

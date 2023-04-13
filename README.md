@@ -1,11 +1,11 @@
-
 # realtong.cn
 
 ---
-* Framework: Astro
-* CMS: Notion
-* Styling: Tailwind CSS
-* Deployment: Vercel
+
+- Framework: Astro
+- CMS: Notion
+- Styling: Tailwind CSS
+- Deployment: Vercel
 
 <img src="./screen-shot/screenshot.png">
 

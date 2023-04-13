@@ -9,15 +9,14 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier --write **/* --ignore-unknown"
   },
   "dependencies": {
     "@astrojs/node": "^5.1.1",
     "@astrojs/react": "^2.1.1",
     "@astrojs/tailwind": "^3.1.1",
     "@notionhq/client": "^1.0.4",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
     "astro": "^2.2.2",
     "feed": "^4.2.2",
     "probe-image-size": "^7.2.3",
@@ -30,11 +29,11 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "eslint": "^8.37.0",
-    "eslint-plugin-astro": "^0.26.1",
-    "eslint-plugin-react": "^7.32.2",
     "lxgw-wenkai-webfont": "^1.7.0",
     "react-icons": "^4.8.0",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.7",
+    "prettier": "^2.8.1",
+    "prettier-plugin-astro": "^0.7.0",
+    "prettier-plugin-tailwindcss": "^0.2.1"
   }
 }
