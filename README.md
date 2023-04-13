@@ -1,11 +1,11 @@
-
 # realtong.cn
 
 ---
-* Framework: Next.js
-* CMS: Notion
-* Styling: Tailwind CSS
-* Deployment: Vercel
+
+- Framework: Next.js
+- CMS: Notion
+- Styling: Tailwind CSS
+- Deployment: Vercel
 
 <img src="./screen-shot/screenshot.png">
 

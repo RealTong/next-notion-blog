@@ -1,70 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "lxgw-wenkai-webfont/style.css";
+@import 'lxgw-wenkai-webfont/style.css';
 
 .weiKaiFont {
-    font-family: 'LXGW WenKai', serif;
+  font-family: 'LXGW WenKai', serif;
 }
 
 :root {
-    --c-bg: #ffffff;
-    --c-scroll: #d9d9d9;
-    --c-scroll-hover: #bbbbbb;
-    scrollbar-color: var(--c-bg);
+  --c-bg: #ffffff;
+  --c-scroll: #d9d9d9;
+  --c-scroll-hover: #bbbbbb;
+  scrollbar-color: var(--c-bg);
 }
 
 html {
-    background-color: var(--c-bg);
+  background-color: var(--c-bg);
 }
 
-img{
-    transition: 0.5s;
+img {
+  transition: 0.5s;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
 ::selection {
-    background: azure;
+  background: azure;
 }
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--c-scroll);
-    border-radius: 4px;
+  background-color: var(--c-scroll);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--c-scroll-hover);
+  background-color: var(--c-scroll-hover);
 }
 ::-webkit-scrollbar-track {
-    background-color: var(--c-bg);
+  background-color: var(--c-bg);
 }
 
 @keyframes health {
-    10% {
-        transform: scaleY(0.3); /* start by scaling to 30% */
-    }
+  10% {
+    transform: scaleY(0.3); /* start by scaling to 30% */
+  }
 
-    30% {
-        transform: scaleY(1); /* scale up to 100% */
-    }
+  30% {
+    transform: scaleY(1); /* scale up to 100% */
+  }
 
-    60% {
-        transform: scaleY(0.5); /* scale down to 50% */
-    }
+  60% {
+    transform: scaleY(0.5); /* scale down to 50% */
+  }
 
-    80% {
-        transform: scaleY(0.75); /* scale up to 75% */
-    }
+  80% {
+    transform: scaleY(0.75); /* scale up to 75% */
+  }
 
-    100% {
-        transform: scaleY(0.6); /* scale down to 60% */
-    }
+  100% {
+    transform: scaleY(0.6); /* scale down to 60% */
+  }
 }
