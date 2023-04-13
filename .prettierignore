@@ -1,0 +1,29 @@
+### Astro template
+# Gitignore template for Astro projects
+# Ignore content collection generated files
+.astro
+
+### react template
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# dotenv environment variables file
+.env
+
+# next.js build output
+.next
+
+# webstorm project files
+.idea
