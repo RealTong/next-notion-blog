@@ -6,6 +6,7 @@ import LatestPosts from '../components/LatestPosts'
 import Footer from '../components/Footer'
 import { getLatestPostList } from '../lib/notion'
 import Activity from '../components/Activity'
+import process from 'next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss'
 
 export default function Index(props) {
   return (
@@ -47,9 +48,9 @@ export default function Index(props) {
         ></Script>
       </div>
       <div
-        className={
-          'flex h-screen w-full min-w-0 flex-col justify-between overflow-y-scroll bg-[#FFF] p-6 font-mono dark:bg-[#212121] dark:text-gray-300'
-        }
+        className={`${
+          process.env.NODE_ENV === 'production' ? '' : 'debug'
+        } flex h-screen w-full min-w-0 flex-col justify-between overflow-y-scroll bg-[#FFF] p-6 font-mono dark:bg-[#212121] dark:text-gray-300`}
       >
         <div className={'m-auto p-6'}>
           <Header />
