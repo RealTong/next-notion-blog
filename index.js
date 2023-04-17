@@ -1,6 +1,5 @@
 module.exports = function ({ addComponents, theme }) {
   const screens = theme('screens')
-  const userStyles = theme('debugScreens.style', {})
   const ignoredScreens = theme('debugScreens.ignore', ['dark'])
   const selector = theme('debugScreens.selector', '.debug')
   const components = {
@@ -22,8 +21,7 @@ module.exports = function ({ addComponents, theme }) {
         alignItems: 'center',
         justifyContent: 'center',
         content: `'xs'`,
-      },
-      userStyles
+      }
     ),
   }
 
