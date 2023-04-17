@@ -19,7 +19,7 @@ async function auth(password) {
     }
 }
 
-function protection() {
+function Protection() {
     const [password, setPassword] = useState("")
 
     const handlePassword = (e) => {
@@ -62,4 +62,4 @@ function protection() {
     )
 }
 
-export default protection
+export default Protection
