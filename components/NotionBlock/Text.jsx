@@ -5,7 +5,7 @@ function Text({ text }) {
 
   return text.map((value, index) => {
     const {
-      annotations: { bold, code, color, italic, strikethrough, underline },
+      annotations: { bold, code, italic, strikethrough, underline },
       text,
     } = value
     return (
@@ -20,7 +20,6 @@ function Text({ text }) {
         ]
           .filter((x) => x) // remove nulls
           .join(' ')}
-        style={color !== 'default' ? { color } : {}}
       >
         {text.link ? (
           <Link href={text.link.url} target="_blank" rel="noopener noreferrer">

@@ -30,7 +30,9 @@ function Header() {
 
   return (
     <div
-      className={'sticky top-0 z-10 flex h-12 w-screen flex-row justify-between bg-white/30 pl-3 text-2xl backdrop-blur-lg 2xl:mx-auto 2xl:max-w-5xl'}
+      className={
+        'sticky top-0 z-10 flex h-12 w-full flex-row justify-between bg-white/30 pl-3 text-2xl backdrop-blur-lg dark:bg-gray-900/30 dark:text-gray-300 2xl:mx-auto 2xl:max-w-5xl'
+      }
     >
       <div>
         <Link href="/">
