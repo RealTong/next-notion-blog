@@ -71,8 +71,6 @@ export default function Index(props) {
     </>
   )
 }
-// https://init.center/
-// https://www.akring.com
 export async function getStaticProps() {
   const latestPosts = await getLatestPostList()
   return {

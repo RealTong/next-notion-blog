@@ -18,12 +18,11 @@ function Post(props) {
       </Head>
       <Header />
       <div className={'debug w-full p-6 dark:bg-[#212121] dark:text-gray-300'}>
-        <main className={'mx-auto border p-3 md:max-w-3xl '}>
-          <div className={''}>
+        <main className={'mx-auto border p-3 md:max-w-3xl'}>
+          <div>
             <h1 className={'text-3xl font-bold'}>{page.properties.name.title[0].plain_text}</h1>
           </div>
           <div>
-            <div className={''}></div>
             {props.blocks.map((block) => {
               return (
                 <div className={'my-3'} key={block.id}>

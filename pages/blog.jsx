@@ -2,13 +2,14 @@ import { getPosts } from '../lib/notion'
 import Post from '../components/blog/Post'
 import Footer from '../components/Footer'
 import Header from '../components/blog/Header'
+import {FaFeather} from "react-icons/fa";
 
 function blog(props) {
   return (
-    <div className={'h-screen w-screen overflow-y-scroll bg-[#FFF] dark:bg-[#212121] dark:text-gray-300'}>
+    <div className={'debug h-screen w-screen overflow-y-scroll bg-[#FFF] dark:bg-[#212121] dark:text-gray-300'}>
       <Header />
       <div className={'mx-auto w-full max-w-5xl px-3'}>
-        <p className={'my-10 font-mono text-4xl font-bold'}>Blog posts</p>
+        <p className={'my-10 font-mono text-4xl font-bold flex'}><FaFeather/>&nbsp;Blog posts</p>
         {props.latestPostTitle.map((post) => {
           return (
             <Post
