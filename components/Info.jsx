@@ -47,18 +47,19 @@ const brandList = [
     css: 'hover:bg-[#FB7299]',
   },
 ]
-function Header() {
+function Info() {
   const i18n = useI18n()
   return (
     <div className={'mt-20'}>
       <div className={'text-5xl font-bold'}>
         <p>👋</p>
-        <p>{i18n.index.header.hello},</p>
-        <p>{i18n.index.header.description}</p>
+        <p>{i18n.index.info.hello},</p>
+        <p>{i18n.index.info.description}</p>
       </div>
       <div className={'mt-6 flex flex-col justify-between'}>
-        <p>{i18n.index.header.identity}</p>
-        <p>{i18n.index.header.hobby}</p>
+        <p>{i18n.index.info.identity}</p>
+        <p>{i18n.index.info.hobby}</p>
+        <p>{i18n.index.info.dream}</p>
       </div>
       <div className={'mt-2 flex max-w-full flex-row flex-nowrap justify-start sm:flex-wrap'}>
         {brandList.map((brand, index) => {
@@ -79,4 +80,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Info

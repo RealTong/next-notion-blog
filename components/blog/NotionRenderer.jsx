@@ -1,6 +1,6 @@
-import Text from '../NotionBlock/Text'
-import NotionImage, { getMediaCtx } from '../NotionBlock/Image'
-import Bookmark from '../NotionBlock/Bookmark'
+import Text from './NotionBlock/Text'
+import NotionImage, { getMediaCtx } from './NotionBlock/Image'
+import Bookmark from './NotionBlock/Bookmark'
 import { Fragment } from 'react'
 
 function NotionRenderer({ block }) {
@@ -15,13 +15,16 @@ function NotionRenderer({ block }) {
       return <div className={'text-3xl font-bold'}>{block.heading_3.rich_text[0].plain_text}</div>
     case 'quote':
       return (
-        <p className="dark:bg-dark-600 rounded border-l-4 bg-gray-50 p-4">
+        <p className="rounded border-l-4 border-sky-300/40 bg-gray-50 p-4 dark:bg-gray-800/100">
           <Text text={block.quote.rich_text} />
         </p>
       )
     case 'code':
       return (
-        <div className={'my-10 overflow-scroll bg-gray-200 text-sm shadow shadow-gray-800'} dangerouslySetInnerHTML={{ __html: block.code.dom }} />
+        <div
+          className={'max-h-fit w-full overflow-auto bg-gray-900 p-4 text-sm selection:bg-gray-600'}
+          dangerouslySetInnerHTML={{ __html: block.code.dom }}
+        />
       )
     case 'bookmark':
       return <Bookmark value={value} />
@@ -74,7 +77,7 @@ function NotionRenderer({ block }) {
         </figure>
       )
     default:
-      return <p>`❌ Unsupported block (${block.type === 'unsupported' ? 'unsupported by Notion API' : block.type})`</p>
+      return <p className={"bg-rose-100 p-2 w-full rounded-lg"}>❌ Unsupported block 「{block.type}」❌</p>
   }
 }
 

@@ -30,7 +30,7 @@ ul {
   list-style: none;
 }
 ::selection {
-  background: azure;
+  background: #cdffff;
 }
 ::-webkit-scrollbar {
   width: 6px;

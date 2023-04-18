@@ -3,7 +3,6 @@ import { getNowPlaying } from '../../lib/spotify'
 export default async function handler(req, res) {
   const response = await getNowPlaying()
 
-  console.log(JSON.stringify(response))
   if (response.status === 204 || response.status > 400) {
     res.status(200).json({ isPlaying: false })
     return new Response(JSON.stringify({ isPlaying: false }), {
