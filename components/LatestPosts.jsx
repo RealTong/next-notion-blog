@@ -1,4 +1,4 @@
-import { BsArrowUpRight } from 'react-icons/bs'
+import {FaFeather} from "react-icons/fa";
 import Link from 'next/link'
 import { useI18n } from '../pages/_app'
 
@@ -27,7 +27,7 @@ function LatestPosts({ latestPostList }) {
           aria-label={'blog'}
           className={'text-neutral-800 transition-colors hover:text-neutral-600 dark:text-gray-300'}
         >
-          <BsArrowUpRight size={24} />
+            <FaFeather size={"24"}/>
         </Link>
       </div>
       <div>

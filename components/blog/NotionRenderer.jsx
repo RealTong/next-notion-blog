@@ -1,6 +1,6 @@
-import Text from '../NotionBlock/Text'
-import NotionImage, { getMediaCtx } from '../NotionBlock/Image'
-import Bookmark from '../NotionBlock/Bookmark'
+import Text from './NotionBlock/Text'
+import NotionImage, { getMediaCtx } from './NotionBlock/Image'
+import Bookmark from './NotionBlock/Bookmark'
 import { Fragment } from 'react'
 
 function NotionRenderer({ block }) {

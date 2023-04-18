@@ -1,6 +1,6 @@
 import Script from 'next/script'
 import Head from 'next/head'
-import Header from '../components/Header'
+import Info from '../components/Info'
 import Projects from '../components/Projects'
 import LatestPosts from '../components/LatestPosts'
 import Footer from '../components/Footer'
@@ -53,7 +53,7 @@ export default function Index(props) {
         } flex h-screen w-full min-w-0 flex-col justify-between overflow-y-scroll bg-[#FFF] p-6 font-mono dark:bg-[#212121] dark:text-gray-300`}
       >
         <div className={'m-auto p-6'}>
-          <Header />
+          <Info />
           <Activity />
           <Projects />
           <LatestPosts
@@ -71,7 +71,8 @@ export default function Index(props) {
     </>
   )
 }
-
+// https://init.center/
+// https://www.akring.com
 export async function getStaticProps() {
   const latestPosts = await getLatestPostList()
   return {

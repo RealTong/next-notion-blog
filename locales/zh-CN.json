@@ -1,11 +1,12 @@
 {
   "index": {
-    "header": {
+    "info": {
       "title": "页头",
       "hello": "你好",
       "description": "我是Tong.",
-      "identity": "\uD83C\uDF92 学生 / \uD83D\uDCBB 开发者",
-      "hobby": "我喜欢制作有趣的项目。"
+      "identity": "\uD83C\uDF92 学生 /\uD83D\uDC68\u200D\uD83D\uDCBB 开发者",
+      "hobby": "\uD83C\uDFAF 我喜欢制作有趣的项目。",
+      "dream": "\uD83C\uDF1F 梦想是成为一名优秀的软件开发工程师，可以用技术去做自己想做的事情。"
     },
     "activity": {
       "title": "活动"

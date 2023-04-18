@@ -1,11 +1,12 @@
 {
   "index": {
-    "header": {
+    "info": {
       "title": "Header",
       "hello": "Hello",
       "description": "I'm Tong.",
-      "identity": "\uD83C\uDF92 Student / \uD83D\uDCBB Web Developer",
-      "hobby": "I like making interesting projects."
+      "identity": "\uD83C\uDF92 Student/\uD83D\uDC68\u200D\uD83D\uDCBB Web Developer",
+      "hobby": "\uD83C\uDFAF I like making interesting projects.",
+      "dream": "\uD83C\uDF1F My dream is to be a great software developer and use technology to pursue my goals."
     },
     "activity": {
       "title": "Activity"
