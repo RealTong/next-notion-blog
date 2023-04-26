@@ -1,7 +1,8 @@
 import { TbBrandDocker, TbBrandWechat } from 'react-icons/tb'
-import { SiAdguard } from 'react-icons/si'
+import {SiAdguard} from 'react-icons/si'
 import Link from 'next/link'
 import { useI18n } from '../pages/_app'
+import {FaFonticonsFi} from "react-icons/fa";
 
 const projectList = [
   {
@@ -9,6 +10,12 @@ const projectList = [
     name: 'wechat-chatgpt',
     description: 'Use ChatGPT On Wechat via wechaty.',
     link: 'https://github.com/fuergaosi233/wechat-chatgpt',
+  },
+  {
+    icon: <FaFonticonsFi />,
+    name: 'unicode-search',
+    description: 'Tool for search Nerd font unicode',
+    link: 'https://github.com/RealTong/unicode-search',
   },
   {
     icon: <TbBrandDocker />,
