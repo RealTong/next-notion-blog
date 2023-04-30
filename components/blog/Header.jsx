@@ -12,6 +12,10 @@ const Links = [
     href: '/blog',
   },
   {
+    name: 'Workspace',
+    href: '/workspace',
+  },
+  {
     name: <BiRss className={'inline text-[22px]'} />,
     href: '/feed',
   },
@@ -54,7 +58,7 @@ function Header() {
                 href={link.href}
                 key={index}
                 className={
-                  'flex h-10 w-24 items-center border bg-white pl-2 text-left text-base duration-500 hover:bg-gray-200 dark:bg-[#212121] md:w-16 md:justify-center md:rounded-lg md:border-0 md:bg-transparent md:dark:bg-transparent'
+                  'flex h-10 w-24 items-center border bg-white pl-2 text-left text-base duration-500 hover:bg-gray-200 dark:bg-[#212121] md:min-w-16 md:justify-center md:rounded-lg md:border-0 md:bg-transparent md:dark:bg-transparent'
                 }
               >
                 {link.name}
