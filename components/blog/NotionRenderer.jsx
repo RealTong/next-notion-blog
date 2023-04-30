@@ -77,7 +77,7 @@ function NotionRenderer({ block }) {
         </figure>
       )
     default:
-      return <p className={"bg-rose-100 p-2 w-full rounded-lg"}>❌ Unsupported block 「{block.type}」❌</p>
+      return <p className={'w-full rounded-lg bg-rose-100 p-2'}>❌ Unsupported block 「{block.type}」❌</p>
   }
 }
 

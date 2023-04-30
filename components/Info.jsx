@@ -47,6 +47,7 @@ const brandList = [
     css: 'hover:bg-[#FB7299]',
   },
 ]
+
 function Info() {
   const i18n = useI18n()
   return (
@@ -61,14 +62,14 @@ function Info() {
         <p>{i18n.index.info.hobby}</p>
         <p>{i18n.index.info.dream}</p>
       </div>
-      <div className={'mt-2 flex max-w-full flex-row flex-nowrap justify-start sm:flex-wrap'}>
+      <div className={'mt-2 flex h-full max-w-full flex-row flex-nowrap justify-start sm:flex-wrap'}>
         {brandList.map((brand, index) => {
           return (
             <Link
               key={index}
               href={brand.link}
               target={'_blank'}
-              className={`decoration-none mr-2 flex flex-row flex-nowrap rounded-md bg-gray-50 p-2 leading-[1rem] transition-colors hover:text-white dark:bg-gray-50/10 ${brand.css}`}
+              className={`decoration-none relative mr-2 mb-2 flex flex-row flex-nowrap rounded-md bg-gray-50 p-2 leading-[1rem] transition-colors hover:text-white dark:bg-gray-50/10 ${brand.css}`}
             >
               {brand.brandIcon}
               <span className={'ml-1 hidden md:block'}>{brand.brandName}</span>

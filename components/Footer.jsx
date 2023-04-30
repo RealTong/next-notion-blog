@@ -18,7 +18,7 @@ function Footer() {
     html.classList.toggle('dark')
   }
   return (
-    <footer className={'mt-10 flex'}>
+    <footer className={'mt-10 flex mx-auto w-full max-w-5xl'}>
       <p className={`w-full text-left`}>
         {i18n.footer.copyright}{' '}
         <Link href="https://realtong.cn" className="underline">
