@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import { createContext, useContext, useMemo } from 'react'
-import zh_CN from '../locales/zh-CN'
-import zh_TW from '../locales/zh-TW'
-import en_US from '../locales/en-US'
+import zh_CN from '../locales/zh-CN.json'
+import zh_TW from '../locales/zh-TW.json'
+import en_US from '../locales/en-US.json'
 import { useRouter } from 'next/router'
 
 const I18nContext = createContext()
