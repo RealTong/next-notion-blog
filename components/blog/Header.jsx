@@ -35,7 +35,7 @@ function Header() {
   return (
     <div
       className={
-        'sticky top-0 z-10 flex h-12 w-full flex-row justify-between bg-white/30 pl-3 text-2xl backdrop-blur-lg dark:bg-gray-900/30 dark:text-gray-300 2xl:mx-auto 2xl:max-w-5xl'
+        'sticky top-0 z-10 flex h-12 w-full flex-row justify-between bg-white/30 text-2xl backdrop-blur-lg dark:bg-gray-900/30 dark:text-gray-300 2xl:mx-auto 2xl:max-w-5xl'
       }
     >
       <div>
@@ -58,7 +58,7 @@ function Header() {
                 href={link.href}
                 key={index}
                 className={
-                  'flex h-10 w-24 items-center border bg-white pl-2 text-left text-base duration-500 hover:bg-gray-200 dark:bg-[#212121] md:min-w-16 md:justify-center md:rounded-lg md:border-0 md:bg-transparent md:dark:bg-transparent'
+                  'md:min-w-16 flex h-10 w-24 items-center border bg-white pl-2 text-left text-base duration-500 hover:bg-gray-200 dark:bg-[#212121] md:w-full md:justify-center md:rounded-lg md:border-0 md:bg-transparent md:p-4 md:dark:bg-transparent'
                 }
               >
                 {link.name}
