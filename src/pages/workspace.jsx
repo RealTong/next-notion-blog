@@ -8,6 +8,11 @@ const products = [
     img: 'thunderobot-911.png',
   },
   {
+    name: 'MacBook Pro 14" 2021',
+    type: 'Notebook',
+    img: 'macbookpro.png',
+  },
+  {
     name: 'KTC H34S18',
     type: 'Monitor',
     img: 'ktc.png',
