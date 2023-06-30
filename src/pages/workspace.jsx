@@ -3,14 +3,14 @@ import Layout from '../components/Layout'
 
 const products = [
   {
-    name: 'THUNDEROBOT 911',
-    type: 'Notebook',
-    img: 'thunderobot-911.png',
-  },
-  {
     name: 'MacBook Pro 14" 2021',
     type: 'Notebook',
     img: 'macbookpro.png',
+  },
+  {
+    name: 'THUNDEROBOT 911',
+    type: 'Notebook',
+    img: 'thunderobot-911.png',
   },
   {
     name: 'KTC H34S18',
@@ -36,6 +36,11 @@ const products = [
     name: 'Logitech MX Keys',
     type: 'Keyboard',
     img: 'mx-keys.webp',
+  },
+  {
+    name: 'Magic Trackpad',
+    type: 'Trackpad',
+    img: 'magic-trackpad.png',
   },
   {
     name: 'Airpods 2',
