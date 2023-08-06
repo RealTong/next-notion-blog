@@ -28,6 +28,11 @@ const products = [
     img: 'pixel4xl.png',
   },
   {
+    name: 'Apple TV 4K 2022',
+    type: 'TV Stick',
+    img: 'appletv7.png',
+  },
+  {
     name: 'Logitech Master 3s',
     type: 'Mouse',
     img: 'mx-master-3s.webp',
