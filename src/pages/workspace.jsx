@@ -23,9 +23,19 @@ const products = [
     img: 'ipad_pro_11_3rd.png',
   },
   {
+    name: 'Apple iPhone 15 Pro',
+    type: 'Phone',
+    img: 'iPhone15Pro.png',
+  },
+  {
     name: 'Google Pixel 4 XL',
     type: 'Phone',
     img: 'pixel4xl.png',
+  },
+  {
+    name: 'Apple Watch Series 9',
+    type: 'Watch',
+    img: 'AppleWatchS9.png',
   },
   {
     name: 'Apple TV 4K 2022',
@@ -48,9 +58,14 @@ const products = [
     img: 'magic-trackpad.png',
   },
   {
-    name: 'Airpods 2',
+    name: 'AirPods 2',
     type: 'Earphone',
     img: 'airpods2.png',
+  },
+  {
+    name: 'AirPodsPro 2 Type-C',
+    type: 'Earphone',
+    img: 'AirPodsPro2-Type-C.png',
   },
   {
     name: 'Chrome Cast with Google TV',
