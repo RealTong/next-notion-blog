@@ -25,9 +25,9 @@ const brandList = [
   },
   {
     brandIcon: <BsTwitterX />,
-    brandName: 'X',
+    brandName: 'Twitter X',
     link: 'https://x.com/RealTong_run',
-    css: 'hover:bg-[#1DA1F2]',
+    css: 'hover:bg-[#000000]',
   },
   {
     brandIcon: <TbBrandInstagram />,
