@@ -1,4 +1,5 @@
-import { TbBrandBilibili, TbBrandDiscord, TbBrandFigma, TbBrandGithub, TbBrandInstagram, TbBrandTwitter } from 'react-icons/tb'
+import { TbBrandBilibili, TbBrandDiscord, TbBrandFigma, TbBrandGithub, TbBrandInstagram } from 'react-icons/tb'
+import { BsTwitterX } from "react-icons/bs";
 import { HiOutlineMail } from 'react-icons/hi'
 import Link from 'next/link'
 import { useI18n } from '../pages/_app'
@@ -23,9 +24,9 @@ const brandList = [
     css: 'hover:bg-[#F24E1E]',
   },
   {
-    brandIcon: <TbBrandTwitter />,
-    brandName: 'Twitter',
-    link: 'https://twitter.com/RealTong_run',
+    brandIcon: <BsTwitterX />,
+    brandName: 'X',
+    link: 'https://x.com/RealTong_run',
     css: 'hover:bg-[#1DA1F2]',
   },
   {
