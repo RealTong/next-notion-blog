@@ -1,4 +1,6 @@
-function Product({ name, type, img }) {
+import { ProductProps } from "../utils/types"
+
+function Product({ name, type, img }: ProductProps) {
   return (
     <div className={'relative m-3 flex h-56 w-44 flex-col items-center justify-between rounded bg-[#F7F7F7] p-4 dark:bg-gray-500/10'}>
       <div className={'m-auto flex'}>

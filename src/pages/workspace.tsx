@@ -1,7 +1,8 @@
 import Product from '../components/Product'
 import Layout from '../components/Layout'
+import { ProductProps } from '../utils/types'
 
-const products = [
+const products: ProductProps[] = [
   {
     name: 'MacBook Pro 14" 2021',
     type: 'Notebook',
@@ -105,7 +106,7 @@ function Workspace() {
       {/*<div className={"flex flex-row flex-wrap max-w-4xl mx-auto justify-center items-center last:hidden"}>*/}
       <div className={'grid grid-cols-2 items-center justify-between justify-items-center gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'}>
         {products.map((item, index) => {
-          return <Product {...item} key={index} />
+          return <Product key={index} {...item} />
         })}
       </div>
     </Layout>

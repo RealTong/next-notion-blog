@@ -1,16 +1,17 @@
-import { getPosts } from '../lib/notion'
+import {getPosts} from '../lib/notion'
 import Post from '../components/blog/Post'
-import { FaFeather } from 'react-icons/fa'
+import {FaFeather} from 'react-icons/fa'
 import Layout from '../components/Layout'
+import {BlogPageProps} from "../utils/types";
 
-function Blog(props) {
+function Blog({latestPosts}: BlogPageProps) {
   return (
     <Layout>
       <p className={'my-10 flex font-mono text-4xl font-bold'}>
-        <FaFeather />
+        <FaFeather/>
         &nbsp;Blog posts
       </p>
-      {props.latestPostTitle.map((post) => {
+      {latestPosts.map((post: any) => {
         return (
           <Post
             key={post.id}
@@ -28,10 +29,10 @@ function Blog(props) {
 }
 
 export async function getStaticProps() {
-  const latestPostTitle = await getPosts()
+  const latestPosts = await getPosts()
   return {
     props: {
-      latestPostTitle,
+      latestPosts,
     },
     revalidate: 60 * 10, // 10min
   }

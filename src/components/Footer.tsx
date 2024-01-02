@@ -1,16 +1,17 @@
 import Link from 'next/link'
-import { CgDarkMode } from 'react-icons/cg'
-import { useI18n } from '../pages/_app'
-import { useRouter } from 'next/router'
+import {CgDarkMode} from 'react-icons/cg'
+import {useI18n} from '../pages/_app'
+import {useRouter} from 'next/router'
+import {ChangeEvent} from "react";
 
 function Footer() {
   const router = useRouter()
-  const { locale, locales } = router
+  const {locale, locales} = router
   const i18n = useI18n()
 
-  function handleLanguageChange(e) {
+  function handleLanguageChange(e: ChangeEvent<HTMLSelectElement>) {
     const lang = e.target.value
-    router.push(router.asPath, router.asPath, { locale: lang })
+    router.push(router.asPath, router.asPath, {locale: lang})
   }
 
   const toggleTheme = () => {
@@ -42,8 +43,9 @@ function Footer() {
           ))}
         </select>
       </div>
-      <button className={'rounded border-gray-300 p-2 text-2xl leading-tight'} onClick={toggleTheme} aria-label={'主题切换器'}>
-        <CgDarkMode />
+      <button className={'rounded border-gray-300 p-2 text-2xl leading-tight'} onClick={toggleTheme}
+              aria-label={'主题切换器'}>
+        <CgDarkMode/>
       </button>
     </footer>
   )

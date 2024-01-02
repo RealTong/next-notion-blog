@@ -1,8 +1,9 @@
-import { BiMenu, BiRss } from 'react-icons/bi'
-import { useState } from 'react'
+import {BiMenu, BiRss} from 'react-icons/bi'
+import {useState} from 'react'
 import Link from 'next/link'
+import {LinkProps} from "../../utils/types";
 
-const Links = [
+const Links: LinkProps[] = [
   {
     name: 'Home',
     href: '/',
@@ -16,7 +17,7 @@ const Links = [
     href: '/workspace',
   },
   {
-    name: <BiRss className={'inline text-[22px]'} />,
+    name: <BiRss className={'inline text-[22px]'}/>,
     href: '/feed',
   },
 ]
@@ -40,18 +41,19 @@ function Header() {
     >
       <div>
         <Link href="/">
-          <img src="/avatar.jpg" alt="" className={'block h-full rounded-full dark:hidden'} />
+          <img src="/avatar.jpg" alt="" className={'block h-full rounded-full dark:hidden'}/>
         </Link>
         <Link href="/">
-          <img src="/avatar.png" alt="" className={'hidden h-full rounded-full dark:block'} />
+          <img src="/avatar.png" alt="" className={'hidden h-full rounded-full dark:block'}/>
         </Link>
       </div>
 
       <div className={'relative flex h-full'}>
         <button onClick={menuClick} className={'md:hidden'}>
-          <BiMenu className={'hover:rounded-2xl'} />
+          <BiMenu className={'hover:rounded-2xl'}/>
         </button>
-        <div className={`flex flex-col ${menuClassName} md:flex md:w-full md:flex-row md:items-center md:justify-between`}>
+        <div
+          className={`flex flex-col ${menuClassName} md:flex md:w-full md:flex-row md:items-center md:justify-between`}>
           {Links.map((link, index) => {
             return (
               <Link

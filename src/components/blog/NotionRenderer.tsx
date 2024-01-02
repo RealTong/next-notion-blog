@@ -1,6 +1,5 @@
 import Text from './NotionBlock/Text'
 import NotionImage, { getMediaCtx } from './NotionBlock/Image'
-import Bookmark from './NotionBlock/Bookmark'
 import { Fragment } from 'react'
 
 function NotionRenderer({ block }) {
@@ -26,8 +25,6 @@ function NotionRenderer({ block }) {
           dangerouslySetInnerHTML={{ __html: block.code.dom }}
         />
       )
-    case 'bookmark':
-      return <Bookmark value={value} />
     case 'bulleted_list_item':
       return (
         <ul>
@@ -51,7 +48,7 @@ function NotionRenderer({ block }) {
       return (
         <div>
           <label htmlFor={block.id}>
-            <input type="checkbox" id={id} defaultChecked={block.to_do.checked} /> <Text text={block.to_do.rich_text} />
+            <input type="checkbox" defaultChecked={block.to_do.checked} /> <Text text={block.to_do.rich_text} />
           </label>
         </div>
       )

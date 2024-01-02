@@ -1,5 +1,6 @@
-import { Feed } from 'feed'
-import { getPosts } from '../lib/notion'
+import {Feed} from 'feed'
+import {getPosts} from '../lib/notion'
+import {PostListProps} from "../utils/types";
 
 const feed = new Feed({
   title: "RealTong's Blog",
@@ -19,8 +20,8 @@ const feed = new Feed({
   },
 })
 
-function generateRSS(posts) {
-  posts.forEach((post) => {
+function generateRSS(posts: PostListProps) {
+  posts.forEach((post: any) => {
     feed.addItem({
       title: post.properties.name.title[0].plain_text,
       id: post.id,
@@ -36,7 +37,7 @@ export default function FeedPage() {
   return <div></div>
 }
 
-export async function getServerSideProps({ res }) {
+export async function getServerSideProps({res}) {
   res.setHeader('Cache-Control', 'max-age=0, s-maxage=60 * 10, stale-while-revalidate')
   const posts = await getPosts()
   const feed = generateRSS(posts)

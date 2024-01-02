@@ -3,8 +3,9 @@ import { SiAdguard } from 'react-icons/si'
 import Link from 'next/link'
 import { useI18n } from '../pages/_app'
 import { FaFonticonsFi } from 'react-icons/fa'
+import {ProjectProps} from "../utils/types";
 
-const projectList = [
+const projectList:ProjectProps[] = [
   {
     icon: <TbBrandWechat />,
     name: 'wechat-chatgpt',

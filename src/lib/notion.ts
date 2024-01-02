@@ -1,9 +1,14 @@
-import { Client } from '@notionhq/client'
+import {Client} from '@notionhq/client'
+import {
+  GetPageResponse,
+  ListBlockChildrenResponse
+} from "@notionhq/client/build/src/api-endpoints";
+import {PostListProps} from "../utils/types";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY })
+const notion = new Client({auth: process.env.NOTION_API_KEY})
 const databaseId = process.env.NOTION_DATABASE_ID
 
-async function getLatestPostList(count) {
+async function getLatestPostList(count = 10): Promise<PostListProps> {
   const response = await notion.databases.query({
     database_id: databaseId,
     filter: {
@@ -27,8 +32,8 @@ async function getLatestPostList(count) {
   return response.results
 }
 
-async function getPosts(slug) {
-  const filterParam = {
+async function getPosts(slug?: string): Promise<PostListProps> {
+  const filterParam: any = {
     and: [
       {
         property: 'published',
@@ -59,15 +64,15 @@ async function getPosts(slug) {
   return response.results
 }
 
-async function getPage(pageId) {
+async function getPage(pageId: string): Promise<GetPageResponse> {
   return await notion.pages.retrieve({
     page_id: pageId,
   })
 }
 
-async function getBlocks(pageId) {
-  let cursor
-  let blocks = []
+async function getBlocks(pageId: string): Promise<ListBlockChildrenResponse['results']> {
+  let cursor: string | null
+  let blocks: ListBlockChildrenResponse['results'] = []
   while (true) {
     const response = await notion.blocks.children.list({
       block_id: pageId,
@@ -81,4 +86,4 @@ async function getBlocks(pageId) {
   return blocks
 }
 
-export { getLatestPostList, getPosts, getPage, getBlocks }
+export {getLatestPostList, getPosts, getPage, getBlocks}
