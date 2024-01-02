@@ -1,21 +1,34 @@
+'use client'
+
 import Link from 'next/link'
 import {CgDarkMode} from 'react-icons/cg'
-import {useI18n} from '../pages/_app'
-import {useRouter} from 'next/router'
-import {ChangeEvent} from "react";
+import {ChangeEvent, useEffect, useState} from "react";
+import {locales} from "../utils/consts";
 
+async function getI18n(lang: string) {
+  const data = await import(`../locale/dictionaries/${lang}.json`);
+  return data;
+}
 function Footer() {
-  const router = useRouter()
-  const {locale, locales} = router
-  const i18n = useI18n()
+  // const i18n = await getDictionary('en-US')
+  const [i18n,setI18n] = useState()
+  useEffect(() => {
+    const loadLocaleData = async (locale) => {
+      const data = await import(`../locale/dictionaries/en-US.json`);
+      setI18n(data);
+    };
+
+    loadLocaleData(navigator.language); // 确保你的 locales 文件名和 navigator.language 格式一致，或者做适当的转换
+  }, []);
 
   function handleLanguageChange(e: ChangeEvent<HTMLSelectElement>) {
     const lang = e.target.value
-    router.push(router.asPath, router.asPath, {locale: lang})
+    // router.push(pathname, {locale: lang})
   }
 
   const toggleTheme = () => {
     const html = document.querySelector('html')
+    if (!html) return
     html.classList.toggle('dark')
   }
   return (
@@ -32,7 +45,7 @@ function Footer() {
       </p>
       <div className={'flex w-full flex-row-reverse'}>
         <select
-          value={locale}
+          value={'en-US'}
           onChange={handleLanguageChange}
           className={'focus:shadow-outline block cursor-pointer appearance-none rounded bg-transparent px-4 leading-tight focus:outline-none'}
         >

@@ -1,52 +1,53 @@
-import { TbBrandDocker, TbBrandWechat } from 'react-icons/tb'
-import { SiAdguard } from 'react-icons/si'
+import {TbBrandDocker, TbBrandWechat} from 'react-icons/tb'
+import {SiAdguard} from 'react-icons/si'
 import Link from 'next/link'
-import { useI18n } from '../pages/_app'
-import { FaFonticonsFi } from 'react-icons/fa'
+import {FaFonticonsFi} from 'react-icons/fa'
 import {ProjectProps} from "../utils/types";
+import {getDictionary} from "../locale/dictionaries";
 
-const projectList:ProjectProps[] = [
+const projectList: ProjectProps[] = [
   {
-    icon: <TbBrandWechat />,
+    icon: <TbBrandWechat/>,
     name: 'wechat-chatgpt',
     description: 'Use ChatGPT On Wechat via wechaty.',
     link: 'https://github.com/fuergaosi233/wechat-chatgpt',
   },
   {
-    icon: <FaFonticonsFi />,
+    icon: <FaFonticonsFi/>,
     name: 'unicode-search',
     description: 'Tool for search Nerd font unicode',
     link: 'https://github.com/RealTong/unicode-search',
   },
   {
-    icon: <TbBrandDocker />,
+    icon: <TbBrandDocker/>,
     name: 'Profile',
     description: 'Self-use Profile.',
     link: 'https://github.com/RealTong/Profile',
   },
   {
-    icon: <SiAdguard />,
+    icon: <SiAdguard/>,
     name: 'streaming-unlock',
     description: 'Break through streaming restrictions.',
     link: 'https://github.com/RealTong/streaming-unlock',
   },
 ]
 
-function Projects() {
-  const i18n = useI18n()
+async function Projects() {
+  const i18n = await getDictionary('en-US')
   return (
     <div>
       <p className={'my-4 text-3xl font-bold'}>{i18n.index.projects.title}</p>
       <div className={'grid grid-cols-1 gap-4 sm:grid-cols-2'}>
         {projectList.map((project, index) => {
-          return <Project key={index} icon={project.icon} name={project.name} description={project.description} link={project.link} />
+          return <Project key={index} icon={project.icon} name={project.name} description={project.description}
+                          link={project.link}/>
         })}
       </div>
     </div>
   )
 }
 
-function Project({ icon, name, description, link }, key) {
+function Project({icon, name, description, link}, key) {
   return (
     <Link
       href={link}

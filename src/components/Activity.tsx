@@ -2,10 +2,10 @@ import NowPlaying from './NowPlaying'
 import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
 import GetContributionGraph from './ContributionGraph'
-import { useI18n } from '../pages/_app'
+import {getDictionary} from "../locale/dictionaries";
 
-function Activity() {
-  const i18n = useI18n()
+async function Activity() {
+  const i18n = await getDictionary('en-US')
   const { data } = useSWR('/api/now', fetcher)
   return (
     <div className={''}>

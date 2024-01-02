@@ -1,56 +1,56 @@
-import { TbBrandBilibili, TbBrandDiscord, TbBrandFigma, TbBrandGithub, TbBrandInstagram } from 'react-icons/tb'
-import { BsTwitterX } from "react-icons/bs";
-import { HiOutlineMail } from 'react-icons/hi'
+import {TbBrandBilibili, TbBrandDiscord, TbBrandFigma, TbBrandGithub, TbBrandInstagram} from 'react-icons/tb'
+import {BsTwitterX} from "react-icons/bs";
+import {HiOutlineMail} from 'react-icons/hi'
 import Link from 'next/link'
-import { useI18n } from '../pages/_app'
+import {getDictionary} from "../locale/dictionaries";
 
 const brandList = [
   {
-    brandIcon: <HiOutlineMail />,
+    brandIcon: <HiOutlineMail/>,
     brandName: 'Email',
     link: 'mailto:i@realtong.cn',
     css: 'hover:bg-[#34A853]',
   },
   {
-    brandIcon: <TbBrandGithub />,
+    brandIcon: <TbBrandGithub/>,
     brandName: 'Github',
     link: 'https://github.com/RealTong',
     css: 'hover:bg-[#000000]',
   },
   {
-    brandIcon: <TbBrandFigma />,
+    brandIcon: <TbBrandFigma/>,
     brandName: 'Figma',
     link: 'https://www.figma.com/@wulanren',
     css: 'hover:bg-[#F24E1E]',
   },
   {
-    brandIcon: <BsTwitterX />,
+    brandIcon: <BsTwitterX/>,
     brandName: 'Twitter X',
     link: 'https://x.com/RealTong_run',
     css: 'hover:bg-[#000000]',
   },
   {
-    brandIcon: <TbBrandInstagram />,
+    brandIcon: <TbBrandInstagram/>,
     brandName: 'Instagram',
     link: 'https://www.instagram.com/realtong_run/',
     css: 'hover:bg-[#d6249f]',
   },
   {
-    brandIcon: <TbBrandDiscord />,
+    brandIcon: <TbBrandDiscord/>,
     brandName: 'Discord',
     link: 'https://discord.gg/SF9TqBnNSJ',
     css: 'hover:bg-[#7289DA]',
   },
   {
-    brandIcon: <TbBrandBilibili />,
+    brandIcon: <TbBrandBilibili/>,
     brandName: 'Bilibili',
     link: 'https://space.bilibili.com/195743150',
     css: 'hover:bg-[#FB7299]',
   },
 ]
 
-function Info() {
-  const i18n = useI18n()
+export default async function Info() {
+  const i18n = await getDictionary('en-US')
   return (
     <div className={'mt-20'}>
       <div className={'text-5xl font-bold'}>
@@ -81,5 +81,3 @@ function Info() {
     </div>
   )
 }
-
-export default Info
