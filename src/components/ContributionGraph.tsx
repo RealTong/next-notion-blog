@@ -1,52 +1,65 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import dynamic from 'next/dynamic'
+'use client'
 
-const GithubCalendar = dynamic(() => import('react-github-calendar'), {
-  ssr: false,
-})
+import {useCallback, useEffect, useState} from 'react'
+import GitHubCalendar from "react-github-calendar";
+import {GitHubUsername} from "../utils/consts";
+
 function GetContributionGraph() {
-  const [windowSize, setWindowSize] = useState()
-  const [mounted, setMounted] = useState(false)
+  const [graphSize, setGraphSize] = useState<'small' | 'medium' | 'large'>('medium')
+
   useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-      })
+    function handleWindowsWidthChange() {
+      if (window.innerWidth < 450) {
+        setGraphSize('small')
+      } else if (window.innerWidth < 640) {
+        setGraphSize('medium')
+      } else {
+        setGraphSize('large')
+      }
     }
-    window.addEventListener('resize', handleResize)
-    handleResize()
-    return () => window.removeEventListener('resize', handleResize)
+
+    window.addEventListener('resize', handleWindowsWidthChange)
+    // useEffect 卸载函数
+    return () => window.removeEventListener('resize', handleWindowsWidthChange)
   }, [])
-  useEffect(() => setMounted(true), [])
-  const isMediumCalendar = mounted && windowSize.width && windowSize.width > 450
-  const isLargeCalendar = mounted && windowSize.width && windowSize.width > 640
 
-  const transformData = useCallback(
-    (contributions) => {
-      const currentYear = new Date().getFullYear()
-      const currentMonth = new Date().getMonth()
-      const shownMonths = isMediumCalendar ? 8 : 6
-
-      return contributions.filter((day) => {
-        const date = new Date(day.date)
-        const monthOfDay = date.getMonth()
-
-        return date.getFullYear() === currentYear && monthOfDay > currentMonth - shownMonths && monthOfDay <= currentMonth
-      })
-    },
-    [isMediumCalendar]
-  )
-
-  const resizeCalendar = useMemo(() => (isLargeCalendar ? undefined : transformData), [isLargeCalendar, transformData])
+  const transformData = useCallback((contributions) => {
+    const currentYear = new Date().getFullYear()
+    const currentMonth = new Date().getMonth()
+    let data = []
+    switch (graphSize) {
+      case "small":
+        // 最近 2 个月
+        data = contributions.slice(-60)
+        break;
+      case "medium":
+        // 最近 6 个月
+        data = contributions.slice(-180)
+        break;
+      case "large":
+        // 最近 1 年
+        data = contributions.slice(-365)
+        break;
+      default:
+        // 最近 6 个月
+        data = contributions.slice(-180)
+        break;
+    }
+    return data
+  },[graphSize])
 
   return (
-    <GithubCalendar
-      username={'RealTong'}
-      transformData={resizeCalendar}
-      hideColorLegend={true}
-      hideMonthLabels={true}
-      hideTotalCount={true}
-    ></GithubCalendar>
+    <div className={'p-2'}>
+      <GitHubCalendar
+        username={GitHubUsername}
+        transformData={transformData}
+        hideColorLegend={true}
+        hideMonthLabels={true}
+        hideTotalCount={true}
+        weekStart={1}
+      ></GitHubCalendar>
+    </div>
   )
 }
+
 export default GetContributionGraph

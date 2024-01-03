@@ -5,3 +5,4 @@ export const AuthorRealTong: Author = {
   url: 'https://github.com/RealTong'
 }
 export const locales = ['en-US', 'zh-CN','zh-TW']
+export const GitHubUsername = process.env.GITHUB_USERNAME || 'RealTong'
