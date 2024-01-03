@@ -28,10 +28,12 @@
     "swr": "^2.1.1"
   },
   "devDependencies": {
+    "@iconify-json/simple-icons": "^1.1.86",
     "@next/bundle-analyzer": "^13.2.4",
     "@types/react": "18.2.46",
     "@unocss/eslint-config": "^0.58.3",
     "@unocss/postcss": "^0.58.3",
+    "@unocss/preset-icons": "^0.58.3",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
     "eslint": "^8.37.0",
@@ -41,7 +43,6 @@
     "lxgw-wenkai-webfont": "^1.7.0",
     "postcss": "^8.4.31",
     "prettier": "^2.8.7",
-    "react-icons": "^4.12.0",
     "unocss": "latest"
   }
 }

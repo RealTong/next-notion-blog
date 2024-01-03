@@ -18,7 +18,7 @@ export interface ProductProps {
 }
 
 export interface ProjectProps {
-  icon: ReactElement,
+  icon: string,
   name: string,
   description: string,
   link: string,
@@ -36,4 +36,11 @@ export interface BlogPostProps {
 export interface LinkProps {
   name: string | ReactElement,
   href: string
+}
+
+export interface BrandProps {
+  brandIcon: string,
+  brandName: string
+  link: string,
+  css: string,
 }

@@ -1,31 +1,28 @@
-import {TbBrandDocker, TbBrandWechat} from 'react-icons/tb'
-import {SiAdguard} from 'react-icons/si'
 import Link from 'next/link'
-import {FaFonticonsFi} from 'react-icons/fa'
 import {ProjectProps} from "../utils/types";
 import {getDictionary} from "../locale/dictionaries";
 
 const projectList: ProjectProps[] = [
   {
-    icon: <TbBrandWechat/>,
+    icon: `i-simple-icons-wechat`,
     name: 'wechat-chatgpt',
     description: 'Use ChatGPT On Wechat via wechaty.',
     link: 'https://github.com/fuergaosi233/wechat-chatgpt',
   },
   {
-    icon: <FaFonticonsFi/>,
+    icon: 'i-simple-icons-unicode',
     name: 'unicode-search',
     description: 'Tool for search Nerd font unicode',
     link: 'https://github.com/RealTong/unicode-search',
   },
   {
-    icon: <TbBrandDocker/>,
+    icon: 'i-simple-icons-docker',
     name: 'Profile',
     description: 'Self-use Profile.',
     link: 'https://github.com/RealTong/Profile',
   },
   {
-    icon: <SiAdguard/>,
+    icon: 'i-simple-icons-adguard',
     name: 'streaming-unlock',
     description: 'Break through streaming restrictions.',
     link: 'https://github.com/RealTong/streaming-unlock',
@@ -58,7 +55,7 @@ function Project({icon, name, description, link}, key) {
       }
     >
       <div className={'flex items-center justify-center'}>
-        <div className={'mr-4 text-4xl'}>{icon}</div>
+        <div className={`mr-4 text-4xl ${icon}`}></div>
         <div className={'flex-1'}>
           <p className={'font-medium leading-relaxed'}>{name}</p>
           <p className={' op-50 text-sm font-normal'}>{description}</p>
