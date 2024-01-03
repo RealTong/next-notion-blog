@@ -1,6 +1,6 @@
-import {Feed} from 'feed'
-import {getPosts} from '../lib/notion'
-import {PostListProps} from "../utils/types";
+import { Feed } from 'feed'
+import { getPosts } from '../lib/notion'
+import { PostListProps } from '../utils/types'
 
 const feed = new Feed({
   title: "RealTong's Blog",
@@ -37,7 +37,7 @@ export default function FeedPage() {
   return <div></div>
 }
 
-export async function getServerSideProps({res}) {
+export async function getServerSideProps({ res }) {
   res.setHeader('Cache-Control', 'max-age=0, s-maxage=60 * 10, stale-while-revalidate')
   const posts = await getPosts()
   const feed = generateRSS(posts)

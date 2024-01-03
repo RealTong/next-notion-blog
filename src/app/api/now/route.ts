@@ -41,17 +41,20 @@ export const GET = async () => {
   //   songUrl,
   //   title,
   // })
-  return new Response(JSON.stringify({
-    album,
-    albumImageUrl,
-    artist,
-    isPlaying,
-    songUrl,
-    title,
-  }), {
-    status: 200,
-    headers: {
-      'content-type': 'application/json',
-    },
-  })
+  return new Response(
+    JSON.stringify({
+      album,
+      albumImageUrl,
+      artist,
+      isPlaying,
+      songUrl,
+      title,
+    }),
+    {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+      },
+    }
+  )
 }

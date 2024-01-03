@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import {BlogPostProps} from "../../utils/types";
+import { BlogPostProps } from '../../utils/types'
 
-function Post({slug, title, preview, date, author, tag}: BlogPostProps) {
+function Post({ slug, title, preview, date, author, tag }: BlogPostProps) {
   return (
     <div className={'weiKaiFont my-6 block border transition-shadow hover:shadow-md'}>
       <Link href={`/blog/${slug}`} target={'_self'} className={'text-1xl block p-4 font-bold'}>

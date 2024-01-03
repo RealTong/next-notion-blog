@@ -17,7 +17,7 @@ const getAccessToken = async () => {
 }
 
 const getTopTracks = async () => {
-  const {access_token} = await getAccessToken()
+  const { access_token } = await getAccessToken()
   const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
     method: 'GET',
     headers: {
@@ -28,7 +28,7 @@ const getTopTracks = async () => {
 }
 const getNowPlaying = async () => {
   try {
-    const {access_token} = await getAccessToken()
+    const { access_token } = await getAccessToken()
     const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
       method: 'GET',
       headers: {
@@ -37,13 +37,13 @@ const getNowPlaying = async () => {
     })
     if (response.status === 204 || response.status > 400) {
       return {
-        isPlaying: false
+        isPlaying: false,
       }
     }
     const data = await response.json()
-    if (data.item === null){
+    if (data.item === null) {
       return {
-        isPlaying: false
+        isPlaying: false,
       }
     }
     return {
@@ -52,13 +52,13 @@ const getNowPlaying = async () => {
       artist: data.item.artists.map((_artist) => _artist.name).join(', '),
       album: data.item.album.name,
       albumImageUrl: data.item.album.images[0].url,
-      songUrl: data.item.external_urls.spotify
+      songUrl: data.item.external_urls.spotify,
     }
   } catch (err) {
     return {
-      isPlaying: false
+      isPlaying: false,
     }
   }
 }
 
-export {getTopTracks, getNowPlaying}
+export { getTopTracks, getNowPlaying }

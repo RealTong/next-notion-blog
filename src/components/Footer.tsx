@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import {CgDarkMode} from 'react-icons/cg'
-import {locales} from "../utils/consts";
-import {getDictionary} from "../locale/dictionaries";
+import { CgDarkMode } from 'react-icons/cg'
+import { locales } from '../utils/consts'
+import { getDictionary } from '../locale/dictionaries'
 
 async function Footer() {
   const i18n = await getDictionary('en-US')
@@ -35,9 +35,8 @@ async function Footer() {
           ))}
         </select>
       </div>
-      <button className={'rounded border-gray-300 p-2 text-2xl leading-tight'}
-              aria-label={'主题切换器'}>
-        <CgDarkMode/>
+      <button className={'rounded border-gray-300 p-2 text-2xl leading-tight'} aria-label={'主题切换器'}>
+        <CgDarkMode />
       </button>
     </footer>
   )

@@ -1,7 +1,7 @@
 import { getNowPlaying } from '../../lib/spotify'
 
 export default async function handler(req, res) {
-  console.log("获取 数据")
+  console.log('获取 数据')
   console.log('req', req)
   const response = await getNowPlaying()
 

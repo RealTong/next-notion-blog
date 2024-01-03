@@ -1,14 +1,14 @@
-import {getPosts} from '../lib/notion'
+import { getPosts } from '../lib/notion'
 import Post from '../components/blog/Post'
-import {FaFeather} from 'react-icons/fa'
+import { FaFeather } from 'react-icons/fa'
 import Layout from '../components/Layout'
-import {BlogPageProps} from "../utils/types";
+import { BlogPageProps } from '../utils/types'
 
-function Blog({latestPosts}: BlogPageProps) {
+function Blog({ latestPosts }: BlogPageProps) {
   return (
     <Layout>
       <p className={'my-10 flex font-mono text-4xl font-bold'}>
-        <FaFeather/>
+        <FaFeather />
         &nbsp;Blog posts
       </p>
       {latestPosts.map((post: any) => {

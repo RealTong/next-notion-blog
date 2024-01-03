@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import {getDictionary} from "../locale/dictionaries";
-import {BrandProps} from "../utils/types";
+import { getDictionary } from '../locale/dictionaries'
+import { BrandProps } from '../utils/types'
 
-const brandList:BrandProps[] = [
+const brandList: BrandProps[] = [
   {
     brandIcon: 'i-simple-icons-gmail',
     brandName: 'Email',
@@ -62,7 +62,7 @@ export default async function Info() {
         <p>{i18n.index.info.dream}</p>
       </div>
       <div className={'mt-2 flex h-full max-w-full flex-row flex-nowrap justify-start sm:flex-wrap'}>
-        {brandList.map(({link,brandName,brandIcon,css}, index) => {
+        {brandList.map(({ link, brandName, brandIcon, css }, index) => {
           return (
             <Link
               key={index}

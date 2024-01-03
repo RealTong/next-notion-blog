@@ -4,39 +4,39 @@ import Info from '../components/Info'
 import Projects from '../components/Projects'
 import LatestPosts from '../components/LatestPosts'
 import Footer from '../components/Footer'
-import {getLatestPostList} from '../lib/notion'
+import { getLatestPostList } from '../lib/notion'
 import Activity from '../components/Activity'
-import {IndexPageProps} from "../utils/types";
+import { IndexPageProps } from '../utils/types'
 
-export default function Index({latestPosts}: IndexPageProps) {
+export default function Index({ latestPosts }: IndexPageProps) {
   return (
     <>
       <Head>
         <title>RealTong&apos;s Home</title>
-        <meta name="description" content="RealTong's Site"/>
-        <meta name="keywords" content="RealTong, Blog, Notion, Next.js, TailwindCSS, NotionCMS"/>
-        <meta name="author" content="RealTong"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="theme-color" content="#000000"/>
-        <link rel="icon" href="/src/app/favicon.ico"/>
-        <link rel="apple-touch-icon" href="/src/app/apple-touch-icon.png"/>
-        <meta name="apple-mobile-web-app-capable" content="yes"/>
-        <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
-        <meta name="apple-mobile-web-app-title" content="RealTong"/>
-        <meta name="msapplication-TileImage" content="/logo192.jpg"/>
-        <meta name="msapplication-TileColor" content="#000000"/>
-        <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:url" content="https://realtong.cn/"/>
-        <meta name="twitter:title" content="RealTong"/>
-        <meta name="twitter:description" content="RealTong's Site"/>
-        <meta name="twitter:image" content="https://realtong.cn/logo192.jpg"/>
-        <meta name="twitter:creator" content="@RealTong_run"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="RealTong"/>
-        <meta property="og:description" content="RealTong's Blog"/>
-        <meta property="og:site_name" content="RealTong"/>
-        <meta property="og:url" content="https://realtong.cn/"/>
-        <meta property="og:image" content="https://realtong.cn/logo192.jpg"/>
+        <meta name="description" content="RealTong's Site" />
+        <meta name="keywords" content="RealTong, Blog, Notion, Next.js, TailwindCSS, NotionCMS" />
+        <meta name="author" content="RealTong" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="icon" href="/src/app/favicon.ico" />
+        <link rel="apple-touch-icon" href="/src/app/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="RealTong" />
+        <meta name="msapplication-TileImage" content="/logo192.jpg" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://realtong.cn/" />
+        <meta name="twitter:title" content="RealTong" />
+        <meta name="twitter:description" content="RealTong's Site" />
+        <meta name="twitter:image" content="https://realtong.cn/logo192.jpg" />
+        <meta name="twitter:creator" content="@RealTong_run" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="RealTong" />
+        <meta property="og:description" content="RealTong's Blog" />
+        <meta property="og:site_name" content="RealTong" />
+        <meta property="og:url" content="https://realtong.cn/" />
+        <meta property="og:image" content="https://realtong.cn/logo192.jpg" />
       </Head>
       <div>
         <Script
@@ -53,11 +53,11 @@ export default function Index({latestPosts}: IndexPageProps) {
         } flex h-screen w-full min-w-0 flex-col justify-between overflow-y-scroll bg-[#FFF] p-6 font-mono dark:bg-[#212121] dark:text-gray-300`}
       >
         <div className={'m-auto p-6'}>
-          <Info/>
-          <Activity/>
-          <Projects/>
+          <Info />
+          <Activity />
+          <Projects />
           <LatestPosts
-            latestPostList={latestPosts.map(({properties}: any) => {
+            latestPostList={latestPosts.map(({ properties }: any) => {
               return {
                 title: properties.name.title[0].plain_text,
                 date: properties.date.date.start,
@@ -65,7 +65,7 @@ export default function Index({latestPosts}: IndexPageProps) {
               }
             })}
           />
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </>

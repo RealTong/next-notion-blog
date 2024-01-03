@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import {ProjectProps} from "../utils/types";
-import {getDictionary} from "../locale/dictionaries";
+import { ProjectProps } from '../utils/types'
+import { getDictionary } from '../locale/dictionaries'
 
 const projectList: ProjectProps[] = [
   {
@@ -36,15 +36,14 @@ async function Projects() {
       <p className={'my-4 text-3xl font-bold'}>{i18n.index.projects.title}</p>
       <div className={'grid grid-cols-1 gap-4 sm:grid-cols-2'}>
         {projectList.map((project, index) => {
-          return <Project key={index} icon={project.icon} name={project.name} description={project.description}
-                          link={project.link}/>
+          return <Project key={index} icon={project.icon} name={project.name} description={project.description} link={project.link} />
         })}
       </div>
     </div>
   )
 }
 
-function Project({icon, name, description, link}, key) {
+function Project({ icon, name, description, link }, key) {
   return (
     <Link
       href={link}

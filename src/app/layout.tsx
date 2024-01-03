@@ -1,5 +1,5 @@
-import type {Metadata} from 'next'
-import {AuthorRealTong} from "../utils/consts";
+import type { Metadata } from 'next'
+import { AuthorRealTong } from '../utils/consts'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   authors: AuthorRealTong,
 }
 
-export default function RootLayout({children, params}: { children: React.ReactNode, params: { lang: string } }) {
+export default function RootLayout({ children, params }: { children: React.ReactNode; params: { lang: string } }) {
   return (
     <html lang={params.lang}>
-    <body>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
