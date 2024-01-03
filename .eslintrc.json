@@ -3,7 +3,11 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["next/core-web-vitals", "prettier"],
+  "extends": [
+    "@unocss",
+    "next/core-web-vitals",
+    "prettier"
+  ],
   "rules": {
     "no-unused-vars": "error",
     "@next/next/no-img-element": "off"

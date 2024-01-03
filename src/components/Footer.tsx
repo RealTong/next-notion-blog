@@ -25,7 +25,7 @@ async function Footer() {
       </p>
       <div className={'flex w-full flex-row-reverse'}>
         <select
-          value={'en-US'}
+          defaultValue={'en-US'}
           className={'focus:shadow-outline block cursor-pointer appearance-none rounded bg-transparent px-4 leading-tight focus:outline-none'}
         >
           {locales.map((lang) => (

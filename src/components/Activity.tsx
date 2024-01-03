@@ -1,7 +1,7 @@
 import NowPlaying from './NowPlaying'
 import GetContributionGraph from './ContributionGraph'
 import {getDictionary} from "../locale/dictionaries";
-import {getNowPlaying, getTopTracks} from "../lib/spotify";
+import {getNowPlaying} from "../lib/spotify";
 
 async function Activity() {
   const i18n = await getDictionary('en-US')
