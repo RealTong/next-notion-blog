@@ -1,8 +1,8 @@
-import { Client } from '@notionhq/client'
-import { GetPageResponse, ListBlockChildrenResponse } from '@notionhq/client/build/src/api-endpoints'
-import { PostListProps } from '../utils/types'
+import {Client} from '@notionhq/client'
+import {GetPageResponse, ListBlockChildrenResponse} from '@notionhq/client/build/src/api-endpoints'
+import {PostListProps} from '../utils/types'
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY })
+const notion = new Client({auth: process.env.NOTION_API_KEY})
 const databaseId = process.env.NOTION_DATABASE_ID
 
 async function getLatestPostList(count = 10): Promise<PostListProps> {
@@ -49,6 +49,7 @@ async function getPosts(slug?: string): Promise<PostListProps> {
       },
     })
   }
+  if (!databaseId) throw new Error('Database id is not defined')
   const response = await notion.databases.query({
     database_id: databaseId,
     filter: filterParam,
@@ -69,19 +70,16 @@ async function getPage(pageId: string): Promise<GetPageResponse> {
 }
 
 async function getBlocks(pageId: string): Promise<ListBlockChildrenResponse['results']> {
-  let cursor: string | null
   let blocks: ListBlockChildrenResponse['results'] = []
   while (true) {
     const response = await notion.blocks.children.list({
       block_id: pageId,
-      start_cursor: cursor,
       page_size: 20,
     })
-    cursor = response.next_cursor
     blocks = blocks.concat(response.results)
     if (!response.has_more) break
   }
   return blocks
 }
 
-export { getLatestPostList, getPosts, getPage, getBlocks }
+export {getLatestPostList, getPosts, getPage, getBlocks}

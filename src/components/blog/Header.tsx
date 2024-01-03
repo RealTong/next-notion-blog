@@ -1,4 +1,4 @@
-import { BiMenu, BiRss } from 'react-icons/bi'
+// import { BiMenu, BiRss } from 'react-icons/bi'
 import { useState } from 'react'
 import Link from 'next/link'
 import { LinkProps } from '../../utils/types'
@@ -17,7 +17,7 @@ const Links: LinkProps[] = [
     href: '/workspace',
   },
   {
-    name: <BiRss className={'inline text-[22px]'} />,
+    name: 'RSS',
     href: '/feed',
   },
 ]
@@ -50,7 +50,7 @@ function Header() {
 
       <div className={'relative flex h-full'}>
         <button onClick={menuClick} className={'md:hidden'}>
-          <BiMenu className={'hover:rounded-2xl'} />
+          {/*<BiMenu className={'hover:rounded-2xl'} />*/}
         </button>
         <div className={`flex flex-col ${menuClassName} md:flex md:w-full md:flex-row md:items-center md:justify-between`}>
           {Links.map((link, index) => {
