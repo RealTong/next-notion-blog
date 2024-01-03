@@ -1,3 +1,5 @@
+'use client'
+
 import MusicBar from './MusicBar'
 import Link from 'next/link'
 

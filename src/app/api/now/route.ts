@@ -1,12 +1,11 @@
-import { getNowPlaying } from '../../lib/spotify'
+import { getNowPlaying } from '../../../lib/spotify'
 
-export default async function handler(req, res) {
-  console.log("获取 数据")
-  console.log('req', req)
+export const GET = async () => {
+  console.log('get now playing')
   const response = await getNowPlaying()
 
   if (response.status === 204 || response.status > 400) {
-    res.status(200).json({ isPlaying: false })
+    // res.status(200).json({ isPlaying: false })
     return new Response(JSON.stringify({ isPlaying: false }), {
       status: 200,
       headers: {
@@ -18,7 +17,13 @@ export default async function handler(req, res) {
   const song = await response.json()
 
   if (song.item === null) {
-    res.status(200).json({ isPlaying: false })
+    // res.status(200).json({ isPlaying: false })
+    return new Response(JSON.stringify({ isPlaying: false }), {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
   }
 
   const isPlaying = song.is_playing
@@ -28,12 +33,25 @@ export default async function handler(req, res) {
   const albumImageUrl = song.item.album.images[0].url
   const songUrl = song.item.external_urls.spotify
 
-  res.status(200).json({
+  // res.status(200).json({
+  //   album,
+  //   albumImageUrl,
+  //   artist,
+  //   isPlaying,
+  //   songUrl,
+  //   title,
+  // })
+  return new Response(JSON.stringify({
     album,
     albumImageUrl,
     artist,
     isPlaying,
     songUrl,
     title,
+  }), {
+    status: 200,
+    headers: {
+      'content-type': 'application/json',
+    },
   })
 }
