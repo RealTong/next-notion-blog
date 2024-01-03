@@ -25,8 +25,6 @@ function GetContributionGraph() {
 
   const transformData = useCallback(
     (contributions) => {
-      const currentYear = new Date().getFullYear()
-      const currentMonth = new Date().getMonth()
       let data = []
       switch (graphSize) {
         case 'small':

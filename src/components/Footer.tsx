@@ -5,11 +5,11 @@ import { getDictionary } from '../locale/dictionaries'
 async function Footer() {
   const i18n = await getDictionary('en-US')
 
-  const toggleTheme = () => {
-    const html = document.querySelector('html')
-    if (!html) return
-    html.classList.toggle('dark')
-  }
+  // const toggleTheme = () => {
+  //   const html = document.querySelector('html')
+  //   if (!html) return
+  //   html.classList.toggle('dark')
+  // }
   return (
     <footer className={'mx-auto mt-10 flex w-full max-w-5xl'}>
       <p className={`w-full text-left`}>
