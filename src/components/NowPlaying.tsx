@@ -6,7 +6,8 @@ import Link from 'next/link'
 function NowPlaying({ song }) {
   return (
     <div className="mb-8 flex w-full flex-row items-center space-x-4">
-      <MusicBar />
+      {/*<MusicBar />*/}
+      <div className={'i-simple-icons-spotify transform rotate-45'}></div>
       <div className="inline-flex flex-col justify-center  truncate">
         <Link
           className="capsize max-w-max truncate font-medium  text-gray-800 dark:text-gray-200"
