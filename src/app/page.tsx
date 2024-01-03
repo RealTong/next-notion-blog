@@ -11,6 +11,7 @@ export default function Page() {
       <Info />
       <Activity />
       <Projects />
+      <LatestPosts />
       <Footer />
     </div>
   )

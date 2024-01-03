@@ -6,6 +6,7 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY })
 const databaseId = process.env.NOTION_DATABASE_ID
 
 async function getLatestPostList(count = 10): Promise<PostListProps> {
+  if (!databaseId) throw new Error('Database id is not defined')
   const response = await notion.databases.query({
     database_id: databaseId,
     filter: {
