@@ -6,7 +6,6 @@ import { getNowPlaying } from '../lib/spotify'
 async function Activity() {
   const i18n = await getDictionary('en-US')
   const song = await getNowPlaying()
-  console.log(song)
   return (
     <div>
       <p className={'my-4 text-3xl font-bold'}>{i18n.index.activity.title}</p>

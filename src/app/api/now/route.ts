@@ -1,7 +1,7 @@
 import {getNowPlaying} from '../../../lib/spotify'
 
-export const GET = async (request: Request) => {
+export const revalidate = 0
+export const GET = async () => {
   const song = await getNowPlaying()
-  console.log(request)
   return Response.json(song)
 }
