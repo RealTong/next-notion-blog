@@ -27,6 +27,7 @@ const getTopTracks = async () => {
   return response.json()
 }
 const getNowPlaying = async () => {
+  console.log('get now playing')
   try {
     const { access_token } = await getAccessToken()
     const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
@@ -34,6 +35,7 @@ const getNowPlaying = async () => {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
+      cache: "no-cache",
     })
     if (response.status === 204 || response.status > 400) {
       return {
@@ -57,6 +59,7 @@ const getNowPlaying = async () => {
   } catch (err) {
     return {
       isPlaying: false,
+      hasError: true,
     }
   }
 }
