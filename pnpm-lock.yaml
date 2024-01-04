@@ -41,6 +41,9 @@ dependencies:
   swr:
     specifier: ^2.1.1
     version: 2.1.1(react@18.2.0)
+  typescript:
+    specifier: ^5.3.3
+    version: 5.3.3
 
 devDependencies:
   '@iconify-json/simple-icons':
@@ -3979,7 +3982,6 @@ packages:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /ufo@1.3.2:
     resolution: {integrity: sha512-o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==}
