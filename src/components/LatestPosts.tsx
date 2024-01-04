@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import {getDictionary} from "../locale/dictionaries";
-import {getLatestPostList} from "../lib/notion";
+import { getDictionary } from '../locale/dictionaries'
+import { getLatestPostList } from '../lib/notion'
 
-function Post({title, link, date}, key) {
+function Post({ title, link, date }, key) {
   return (
     <Link
       href={`/blog/${link}`}
@@ -34,10 +34,10 @@ async function LatestPosts() {
       </div>
       <div>
         {latestPostList.map((post: any, index) => {
-          const title = post.properties.name.title[0].plain_text;
-          const date = post.properties.date.date.start;
-          const link = post.properties.slug.rich_text[0].plain_text;
-          return <Post key={index} date={date} link={link} title={title}/>
+          const title = post.properties.name.title[0].plain_text
+          const date = post.properties.date.date.start
+          const link = post.properties.slug.rich_text[0].plain_text
+          return <Post key={index} date={date} link={link} title={title} />
         })}
       </div>
     </>

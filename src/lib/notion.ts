@@ -1,8 +1,8 @@
-import {Client} from '@notionhq/client'
-import {GetPageResponse, ListBlockChildrenResponse} from '@notionhq/client/build/src/api-endpoints'
-import {PostListProps} from '../utils/types'
+import { Client } from '@notionhq/client'
+import { GetPageResponse, ListBlockChildrenResponse } from '@notionhq/client/build/src/api-endpoints'
+import { PostListProps } from '../utils/types'
 
-const notion = new Client({auth: process.env.NOTION_API_KEY})
+const notion = new Client({ auth: process.env.NOTION_API_KEY })
 const databaseId = process.env.NOTION_DATABASE_ID
 
 async function getLatestPostList(count = 10): Promise<PostListProps> {
@@ -82,4 +82,4 @@ async function getBlocks(pageId: string): Promise<ListBlockChildrenResponse['res
   return blocks
 }
 
-export {getLatestPostList, getPosts, getPage, getBlocks}
+export { getLatestPostList, getPosts, getPage, getBlocks }
