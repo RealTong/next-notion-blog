@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children, params }: { children: React.ReactNode; params: { lang: string } }) {
-  console.log('RootLayout', params)
   return (
     <html lang={params.lang}>
       <body>

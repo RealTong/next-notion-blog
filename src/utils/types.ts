@@ -3,6 +3,11 @@ import { ReactElement } from 'react'
 
 export type PostListProps = QueryDatabaseResponse['results']
 
+type Properties = Extract<
+  QueryDatabaseResponse["results"][number],
+  { properties: unknown }
+>["properties"];
+
 export interface IndexPageProps {
   latestPosts: PostListProps
 }
