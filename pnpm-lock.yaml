@@ -5,9 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@9gustin/react-notion-render':
+    specifier: ^3.11.3
+    version: 3.11.3(react-dom@18.2.0)(react@18.2.0)
   '@notionhq/client':
-    specifier: ^1.0.4
-    version: 1.0.4
+    specifier: ^2.2.13
+    version: 2.2.14
   '@unocss/reset':
     specifier: ^0.58.3
     version: 0.58.3
@@ -46,6 +49,9 @@ dependencies:
     version: 5.3.3
 
 devDependencies:
+  '@iconify-json/bi':
+    specifier: ^1.1.23
+    version: 1.1.23
   '@iconify-json/simple-icons':
     specifier: ^1.1.86
     version: 1.1.86
@@ -96,6 +102,17 @@ devDependencies:
     version: 0.58.3(postcss@8.4.31)(vite@5.0.10)
 
 packages:
+
+  /@9gustin/react-notion-render@3.11.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-BNyiHyIPT8lFU8xOLTKxdJbnfzMOBdb7wV+LsZHlCp9wi8cmo/U9gKAv/q4vDwPMw/OQyw3C/qoLDGcfTmPlCw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
@@ -687,6 +704,12 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
+  /@iconify-json/bi@1.1.23:
+    resolution: {integrity: sha512-1te+g9ZzI+PU1Lv6Xerd3XPXf4DE6g3TvDL2buIopTAfrauPHyXCHPFQMrzoQVNrVPCpN3rv3vBtJMPyBwJ9IA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/simple-icons@1.1.86:
     resolution: {integrity: sha512-rD5VlIgiOBPDcVQUCNbGu31WRYt+bj6bWFjH6+KEsxK/hDZTzylT5odF4Jo85PJUGZeJcGn18woE6P6I1Jiuxg==}
     dependencies:
@@ -856,8 +879,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@notionhq/client@1.0.4:
-    resolution: {integrity: sha512-m7zZ5l3RUktayf1lRBV1XMb8HSKsmWTv/LZPqP7UGC1NMzOlc+bbTOPNQ4CP/c1P4cP61VWLb/zBq7a3c0nMaw==}
+  /@notionhq/client@2.2.14:
+    resolution: {integrity: sha512-oqUefZtCiJPCX+74A1Os9OVTef3fSnVWe2eVQtU1HJSD+nsfxfhwvDKnzJTh2Tw1ZHKLxpieHB/nzGdY+Uo12A==}
     engines: {node: '>=12'}
     dependencies:
       '@types/node-fetch': 2.6.2

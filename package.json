@@ -14,7 +14,8 @@
     "format": "prettier --write src/**/*.{ts,tsx} --ignore-unknown"
   },
   "dependencies": {
-    "@notionhq/client": "^1.0.4",
+    "@9gustin/react-notion-render": "^3.11.3",
+    "@notionhq/client": "^2.2.13",
     "@unocss/reset": "^0.58.3",
     "feed": "^4.2.2",
     "next": "14.0.4",
@@ -29,6 +30,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@iconify-json/bi": "^1.1.23",
     "@iconify-json/simple-icons": "^1.1.86",
     "@next/bundle-analyzer": "^13.2.4",
     "@types/react": "18.2.46",

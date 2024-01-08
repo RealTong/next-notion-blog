@@ -3,7 +3,7 @@ import {defineConfig, presetUno, presetIcons} from 'unocss'
 export default defineConfig({
     content: {
         filesystem: [
-            '**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}'
+            'src/**/*.{vue,htm,html,jsx,tsx}'
         ]
     },
     presets: [

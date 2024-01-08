@@ -34,8 +34,9 @@ export interface BlogPostProps {
 }
 
 export interface LinkProps {
-  name: string | ReactElement
+  name: string
   href: string
+  icon?: string
 }
 
 export interface BrandProps {
