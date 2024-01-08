@@ -1,3 +1,5 @@
+import 'server-only'
+
 const client_id = process.env.SPOTIFY_CLIENT_ID
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN
@@ -15,9 +17,15 @@ const getAccessToken = async () => {
   })
   return response.json()
 }
+const getCoverBase64 = async (url: string) => {
+  const res = await fetch(url)
+  const buff = await res.arrayBuffer()
+
+  return Buffer.from(buff).toString('base64')
+}
 
 const getTopTracks = async () => {
-  const { access_token } = await getAccessToken()
+  const {access_token} = await getAccessToken()
   const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
     method: 'GET',
     headers: {
@@ -28,7 +36,7 @@ const getTopTracks = async () => {
 }
 const getNowPlaying = async () => {
   try {
-    const { access_token } = await getAccessToken()
+    const {access_token} = await getAccessToken()
     const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
       method: 'GET',
       headers: {
@@ -63,4 +71,25 @@ const getNowPlaying = async () => {
   }
 }
 
-export { getTopTracks, getNowPlaying }
+const getNowPlayingSVG = async ({coverFormat}: { coverFormat: 'url' | 'base64' } = {coverFormat: 'url'}) => {
+// : Promise<TrackInfo | { isPlaying: false }> {
+  const track = await getTopTracks()
+
+  if (track === null) {
+    return {
+      isPlaying: false,
+    }
+  }
+
+  if (coverFormat === 'base64') {
+    const coverBase64 = await getCoverBase64(track.coverUrl)
+
+    return {
+      ...track,
+      coverUrl: `data:image/jpeg;base64,${coverBase64}`,
+    }
+  }
+
+  return track
+}
+export {getTopTracks, getNowPlaying,getNowPlayingSVG}
