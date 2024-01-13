@@ -67,7 +67,13 @@ devDependencies:
   '@unocss/postcss':
     specifier: ^0.58.3
     version: 0.58.3(postcss@8.4.31)
+  '@unocss/preset-attributify':
+    specifier: ^0.58.3
+    version: 0.58.3
   '@unocss/preset-icons':
+    specifier: ^0.58.3
+    version: 0.58.3
+  '@unocss/transformer-attributify-jsx':
     specifier: ^0.58.3
     version: 0.58.3
   autoprefixer:

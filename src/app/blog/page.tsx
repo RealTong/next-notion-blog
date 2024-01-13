@@ -1,10 +1,13 @@
-import { getPosts } from '../../lib/notion'
+import {getBlocks, getPosts} from '../../lib/notion'
 import Link from 'next/link'
 
 export default async function Page() {
   const posts = await getPosts()
+  // console.log(posts[0])
+  // const page = await get('a4712a85-29bf-4776-bec5-9e95f36dc122')
+  // console.log("page: ",page)
   return (
-    <div className={'flex flex-col max-w-3xl m-auto'}>
+    <div className={'mx-auto'}>
       {posts.map((post) => {
         if ('properties' in post) {
           const { date, author, slug, preview, name } = post.properties
@@ -40,7 +43,7 @@ export default async function Page() {
                 <div className="text-[#4572E1]">Notion</div>
               </div> */}
               <div className="text-gray-500">{postPage.preview}</div>
-              <Link href={`/blog/${postPage.slug? postPage.slug:''}`} className='flex flex-row items-center gap-1 text-amber-500 hover:text-amber-600 cursor-pointer'>
+              <Link href={`/blog/${postPage.slug? postPage.slug:''}`} className='flex flex-row items-center gap-1 cursor-pointer'>
                 <p className=''>Read more</p>
                 <div className='i-bi-arrow-right'></div>
               </Link>

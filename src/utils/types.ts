@@ -1,5 +1,5 @@
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
-import { ReactElement } from 'react'
+import {QueryDatabaseResponse} from '@notionhq/client/build/src/api-endpoints'
+import {ReactElement} from 'react'
 
 export type PostListProps = QueryDatabaseResponse['results']
 

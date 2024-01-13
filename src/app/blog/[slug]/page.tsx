@@ -1,8 +1,46 @@
+import {indexGenerator, rnrSlugify} from '@9gustin/react-notion-render'
+import NotionBlockRender from "../../../components/blog/NotionBlocks";
 
-export default function Page() {
+const TableOfContents = ({blocks}) => {
   return (
-    <div className={'flex flex-col max-w-5xl m-auto p-6'}>
-      Slug
-    </div>
+    <>
+      Table of contents:
+      <ul>
+        {
+          indexGenerator(blocks).map(({id, plainText, type}) => (
+            <li key={id}>
+              <a href={`#${rnrSlugify(plainText)}`}>
+                {plainText}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </>
+  )
+}
+export default async function Page({params}: { params: { slug: string } }) {
+  // const page = await getPageFromSlug(params.slug)
+  // const blocks = await getBlocks(page?.id) as any;
+  const fs = require('fs')
+  // 从 blocks.json 读取数据
+  const blocks = JSON.parse(fs.readFileSync('./blocks.json', 'utf8'))
+  // console.log(blocks)
+  // 如果 blocks 是空的，就不渲染 跳转到 404
+  if (blocks.length === 0) {
+    return (
+      <div>404</div>
+    )
+  }
+  return (
+    <>
+      {/*<TableOfContents blocks={blocks}/>*/}
+      {/*<Render blocks={blocks} useStyles={true} emptyBlocks={true} classNames={true}/>*/}
+      {
+        blocks.map((block: any) => {
+          return <NotionBlockRender key={block.id} block={block}/>
+        })
+      }
+    </>
   )
 }

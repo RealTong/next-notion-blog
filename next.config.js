@@ -8,11 +8,7 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    remotePatterns: [
-      {
-        hostname: 's3.us-west-2.amazonaws.com',
-      },
-    ],
+    domains: ['cdn.dribbble.com','s3.us-west-2.amazonaws.com']
   },
   experimental: {
     serverComponentsExternalPackages: ['shiki'],
