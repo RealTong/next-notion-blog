@@ -28,6 +28,12 @@ const brandList: BrandProps[] = [
     css: 'hover:bg-[#000000]',
   },
   {
+    brandIcon: 'i-simple-icons-duolingo',
+    brandName: 'Duolingo',
+    link: 'https://www.duolingo.com/profile/RealTong233',
+    css: 'hover:bg-[#58CC02]',
+  },
+  {
     brandIcon: 'i-simple-icons-instagram',
     brandName: 'Instagram',
     link: 'https://www.instagram.com/realtong_run/',
