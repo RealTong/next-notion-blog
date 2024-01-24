@@ -2,7 +2,8 @@ import {Colors} from "./NotionBlockColors";
 import {Fragment} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import useSWRImmutable from 'swr/immutable'
+import {host} from "../../utils/consts";
+import {unfurl} from "unfurl.js";
 
 interface IText {
   type: string
@@ -218,7 +219,8 @@ const NotionVideo = ({value}: {
 const NotionQuote = ({value}: {
   value: any
 }) => {
-  let config = value.text[0]
+
+  let config = value.rich_text[0]
   // Dirty custom, Notion quote format: italic-> {"author":"xxx",link:"xxx"}xxxx
   let author, link
   if (/\{([^)]+)\}/.test(config.text.content)) {
@@ -233,15 +235,27 @@ const NotionQuote = ({value}: {
     link = config.link
   }
 
-  const previewFetcher = (url: string) => fetch(`/api/bookmark/${encodeURIComponent(url)}`).then(res => res.json())
-  const {data, error} = useSWRImmutable(link ?? null, previewFetcher)
+  // const previewFetcher = (url: string) => fetch(`/api/bookmark/${encodeURIComponent(url)}`).then(res => res.json())
+  // const {data, error} = useSWRImmutable(link ?? null, previewFetcher)
+  const data = {
+    title: "", description: "", favicon: "", open_graph: {
+      images: [{url: ""}]
+    }, oEmbed: {
+      thumbnails: [{url: ""}]
+    }, twitter_card: {
+      images: [{url: ""}]
+    }
+  }
+  const error = {}
+
   if (!link || error) {
     return (
       <div className="py-4 my-4 flex rounded-2xl
             text-true-gray-500 justify-center md:w-9/10 mx-auto dark:text-true-gray-400 before:content-['❞'] before:w-10 before:text-4xl before:font-bold before:leading-8">
         <div className="leading-1">
-          <blockquote className="text-xl font-bold leading-7 text-true-gray-900 after:content-['❞'] after:text-true-gray-500 after:dark:text-true-gray-400 dark:text-true-gray-50">
-            <NotionText text={author ? value.text.slice(1) : value.text}/>
+          <blockquote
+            className="text-xl font-bold leading-7 text-true-gray-900 after:content-['❞'] after:text-true-gray-500 after:dark:text-true-gray-400 dark:text-true-gray-50">
+            <NotionText text={author ? value.rich_text.slice(1) : value.rich_text}/>
           </blockquote>
 
           {author && <div className="font-light leading-4">
@@ -256,7 +270,8 @@ const NotionQuote = ({value}: {
         <div
           className="bg-light-300 my-4 flex rounded-2xl text-true-gray-500 justify-center flex-col dark:bg-dark-300 dark:text-true-gray-400 before:content-['❝'] before:w-10 before:text-4xl before:font-bold before:p-3 before:pb-0">
           <div className="leading-1">
-            <blockquote className="pt-0 p-3 text-xl font-bold leading-7 text-true-gray-900 dark:text-true-gray-50 after:content-['❞'] after:text-true-gray-500 after:dark:text-true-gray-400">
+            <blockquote
+              className="pt-0 p-3 text-xl font-bold leading-7 text-true-gray-900 dark:text-true-gray-50 after:content-['❞'] after:text-true-gray-500 after:dark:text-true-gray-400">
               <NotionText text={(author || link) ? value.text.slice(1) : value.text}/>
             </blockquote>
           </div>
@@ -289,7 +304,7 @@ const NotionQuote = ({value}: {
             <div
                 className="rounded-b-2xl p-3 bg-light-600 font-light leading-4 hover:(filter brightness-90) transition duration-300 ease-in-out dark:bg-dark-600">
                 <Link href={link}>
-                    <a className="flex justify-between">
+                    <div className="flex justify-between">
                         <div className="flex flex-col justify-between <sm:max-w-8/10 pr-1">
                             <div
                                 className="text-true-gray-600 text-sm line-clamp-2 leading-4 mb-1 font-semibold dark:text-true-gray-200">{title}</div>
@@ -305,7 +320,7 @@ const NotionQuote = ({value}: {
                         <div className="flex justify-center items-center overflow-hidden rounded-xl bg-light-400">
                           <img className="rounded-lg h-10 w-10" src={favicon} alt="favicon"/>
                         </div>)}
-                    </a>
+                    </div>
                 </Link>
             </div>
         }
@@ -319,7 +334,8 @@ const NotionCallout = ({value}: {
 }) => {
   // read first bg color of text as callout background color
   let calloutBackgroundColor = value.color
-  let calloutTextBgColor = value.text[0].annotations.color
+
+  let calloutTextBgColor = value.rich_text[0].annotations.color
 
   calloutTextBgColor = calloutTextBgColor.endsWith('_background') ? calloutTextBgColor.replace('_background', '') : 'gray'
 
@@ -356,27 +372,53 @@ const NotionCallout = ({value}: {
   )
 
 }
+type Data = Awaited<ReturnType<typeof unfurl>>
 const NotionBookmark = ({value}: {
   value: any
 }) => {
+  let ogData:null|Data = null
   const {url} = value
-  const {data, error} = useSWRImmutable(url, previewFetcher)
+  const encodeURL = encodeURIComponent(url)
+  // const data = fetch(`${host}/api/bookmark/${encodeURL}`).then(res => res.json())
+  const data = fetch(`${host}/api/bookmark/${encodeURL}`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`获取 OG 失败`);
+        // return null
+      }
+      return res.json()
+    }).then(data => {
+      if (data) {
+        console.log("1a",ogData)
+        ogData = data as Data;
+        console.log("2a",ogData)
+      } else {
+        ogData = null;
+      }
+    })
+    .catch(error => {
+      // Handle network errors or thrown errors
+      console.error('Fetch error:', error.message);
+      ogData = null
+    });
 
-  if (error)
-    return (
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center p-2 space-x-2 transition-colors duration-300 ease-in-out border-none text-true-gray-600 rounded-2xl bg-true-gray-100 hover:bg-true-gray-200 my-4 dark:bg-true-gray-900 dark:text-true-gray-300 dark:hover:bg-true-gray-800">
-        <span className={'i-bi-link'}></span>
-        <span className="overflow-hidden truncate">{url}</span>
-      </a>
-    )
 
-  if (!data)
+  // if (data)
+  //   return (
+  //     <a
+  //       href={url}
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //       className="flex items-center p-2 space-x-2 transition-colors duration-300 ease-in-out border-none text-true-gray-600 rounded-2xl bg-true-gray-100 hover:bg-true-gray-200 my-4 dark:bg-true-gray-900 dark:text-true-gray-300 dark:hover:bg-true-gray-800">
+  //       <span className={'i-bi-link'}></span>
+  //       <span className="overflow-hidden truncate">{url}</span>
+  //     </a>
+  //   )
+
+  console.log(ogData)
+  if (!ogData) {
     return (
-      <Link href={url}>
+      <Link legacyBehavior href={url}>
         <a target="_blank" rel="noopener noreferrer">
           <div
             className="my-4 flex text-true-gray-600 bg-light-300 rounded-2xl cursor-pointer h-30 filter group-hover:brightness-90 transition duration-300 ease-in-out dark:bg-dark-300 dark:text-true-gray-300">
@@ -396,14 +438,15 @@ const NotionBookmark = ({value}: {
         </a>
       </Link>
     )
-
-  const {title, description, favicon, open_graph, oEmbed, twitter_card} = data
+  }
+  const {title, description, favicon, open_graph, oEmbed, twitter_card} = ogData
+  // @ts-ignore
   const images = open_graph?.images ?? twitter_card?.images ?? oEmbed?.thumbnails ?? []
 
   return (
 
-    <Link href={url}>
-      <a target="_blank" rel="noopener noreferrer">
+    <Link legacyBehavior href={url}>
+      <a  target="_blank" rel="noopener noreferrer">
         <div
           className="my-4 flex text-true-gray-600 bg-light-300 rounded-2xl cursor-pointer h-30 transition duration-300 ease-in-out filter hover:brightness-90 dark:bg-dark-300 dark:text-true-gray-200">
           <div className="w-full flex">
@@ -499,18 +542,18 @@ const NotionBlockRender = ({block}: {
         </div>
       )
 
-    // case 'quote':
-    //   return (
-    //     <NotionQuote value={value}/>
-    //   )
+    case 'quote':
+      return (
+        <NotionQuote value={value}/>
+      )
 
     case 'callout':
       return (
         <NotionCallout value={value}></NotionCallout>
       )
 
-    // case 'bookmark':
-    //   return <NotionBookmark value={value}/>
+    case 'bookmark':
+      return <NotionBookmark value={value}/>
     default:
       return <div>{type} Not support</div>
   }

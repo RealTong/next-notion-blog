@@ -6,3 +6,4 @@ export const AuthorRealTong: Author = {
 }
 export const locales = ['en-US', 'zh-CN', 'zh-TW']
 export const GitHubUsername = process.env.GITHUB_USERNAME || 'RealTong'
+export const host = process.env.HOST || 'http://localhost:3000'
