@@ -9,7 +9,7 @@ export const GET = async (request: NextApiRequest, {params}: {
   params: { url: string }
 }, response: NextResponse) => {
   const {url} = params
-  if (!url) {
+  if (!url || url ==='null') {
     return Response.json({error: 'url is required'}, {status: 400})
   }
   const decodeURL = decodeURIComponent(url as string)
