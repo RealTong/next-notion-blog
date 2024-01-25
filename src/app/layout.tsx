@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { AuthorRealTong } from '../utils/consts'
+import { AuthorRealTong } from '@/utils/consts'
 import './globals.css'
 
 export const metadata: Metadata = {

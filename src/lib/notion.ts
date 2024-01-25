@@ -3,7 +3,7 @@ import {
   GetPageResponse,
   ListBlockChildrenResponse,
 } from '@notionhq/client/build/src/api-endpoints'
-import {PostListProps} from '../utils/types'
+import {PostListProps} from '@/utils/types'
 
 const notion = new Client({auth: process.env.NOTION_API_KEY})
 const databaseId = process.env.NOTION_DATABASE_ID

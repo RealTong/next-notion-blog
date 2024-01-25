@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { locales } from '../utils/consts'
+import { locales } from '@/utils/consts'
 import { getDictionary } from '../locale/dictionaries'
 
 async function Footer() {

@@ -1,4 +1,4 @@
-import {host} from "../../../utils/consts";
+import {host} from "@/utils/consts";
 import NotionText from "./NotionText";
 import Link from "next/link";
 import {unfurl} from "unfurl.js";

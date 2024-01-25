@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getDictionary } from '../locale/dictionaries'
-import { BrandProps } from '../utils/types'
+import { BrandProps } from '@/utils/types'
 
 const brandList: BrandProps[] = [
   {

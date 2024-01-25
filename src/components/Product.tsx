@@ -1,4 +1,4 @@
-import { ProductProps } from '../utils/types'
+import { ProductProps } from '@/utils/types'
 
 function Product({ name, type, img }: ProductProps) {
   return (

@@ -1,4 +1,4 @@
-import {host} from "../../../utils/consts";
+import {host} from "@/utils/consts";
 import Link from "next/link";
 import {unfurl} from "unfurl.js";
 

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ProjectProps } from '../utils/types'
+import { ProjectProps } from '@/utils/types'
 import { getDictionary } from '../locale/dictionaries'
 
 const projectList: ProjectProps[] = [

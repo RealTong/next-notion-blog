@@ -1,5 +1,5 @@
 import NotionText from "./NotionText";
-import {getMediaCtx} from "../../../utils/notion-utils";
+import {getMediaCtx} from "@/utils/notion-utils";
 
 const NotionVideo = ({value}: {
   value: any

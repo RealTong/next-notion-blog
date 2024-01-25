@@ -1,5 +1,6 @@
 import {Colors} from "./NotionBlockColors";
 
+
 const NotionText = ({text, inheritColor}: {
   text: any,
   inheritColor?: boolean

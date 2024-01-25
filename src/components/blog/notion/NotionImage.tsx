@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NotionText from "./NotionText";
-import {getMediaCtx} from "../../../utils/notion-utils";
+import {getMediaCtx} from "@/utils/notion-utils";
 
 const NotionImage = ({value}: any) => {
   let {src: imageSrc, caption: imageCaption, expire} = getMediaCtx(value)

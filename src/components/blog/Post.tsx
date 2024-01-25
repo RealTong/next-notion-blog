@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BlogPostProps } from '../../utils/types'
+import { BlogPostProps } from '@/utils/types'
 
 function Post({ slug, title, preview, date, author, tag }: BlogPostProps) {
   return (

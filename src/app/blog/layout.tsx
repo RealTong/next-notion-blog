@@ -1,6 +1,6 @@
 import type {Metadata} from 'next'
-import {AuthorRealTong} from '../../utils/consts'
-import Header from '../../components/blog/Header'
+import {AuthorRealTong} from '@/utils/consts'
+import Header from '@/components/blog/Header'
 import '../globals.css'
 
 export const metadata: Metadata = {

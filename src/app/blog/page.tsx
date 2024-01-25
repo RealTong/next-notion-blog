@@ -1,4 +1,4 @@
-import {getPosts} from '../../lib/notion'
+import {getPosts} from '@/lib/notion'
 import Link from 'next/link'
 
 export default async function Page() {

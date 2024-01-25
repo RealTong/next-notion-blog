@@ -1,4 +1,4 @@
-import {getNowPlayingSVG} from '../../../lib/spotify'
+import {getNowPlayingSVG} from '@/lib/spotify'
 
 export const revalidate = 0
 export const GET = async (response: Response) => {

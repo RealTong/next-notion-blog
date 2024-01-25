@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import {LinkProps} from '../../utils/types'
+import {LinkProps} from '@/utils/types'
 
 const Links: LinkProps[] = [
   {

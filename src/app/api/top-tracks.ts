@@ -1,4 +1,4 @@
-import { getTopTracks } from '../../lib/spotify'
+import { getTopTracks } from '@/lib/spotify'
 
 const topTracks = async (_, res) => {
   const { items } = await getTopTracks()

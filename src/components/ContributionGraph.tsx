@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import GitHubCalendar from 'react-github-calendar'
-import { GitHubUsername } from '../utils/consts'
+import { GitHubUsername } from '@/utils/consts'
 
 function GetContributionGraph() {
   const [graphSize, setGraphSize] = useState<'small' | 'medium' | 'large'>()

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getDictionary } from '../locale/dictionaries'
-import { getLatestPostList } from '../lib/notion'
+import { getLatestPostList } from '@/lib/notion'
 
 function Post({ title, link, date }, key) {
   return (
