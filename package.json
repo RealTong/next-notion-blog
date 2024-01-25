@@ -48,6 +48,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.0.0",
     "lxgw-wenkai-webfont": "^1.7.0",
+    "module-alias": "^2.2.3",
     "postcss": "^8.4.31",
     "prettier": "^2.8.7",
     "unocss": "latest"

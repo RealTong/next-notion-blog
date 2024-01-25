@@ -1,4 +1,4 @@
-import {Colors} from "../NotionBlockColors";
+import {Colors} from "./NotionBlockColors";
 import NotionText from "./NotionText";
 
 const NotionCallout = ({value}: {

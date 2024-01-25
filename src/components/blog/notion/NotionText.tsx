@@ -1,4 +1,4 @@
-import {Colors} from "../NotionBlockColors";
+import {Colors} from "./NotionBlockColors";
 
 const NotionText = ({text, inheritColor}: {
   text: any,

@@ -1,4 +1,4 @@
-import NotionRender from "../../../components/blog/Notion/NotionRender";
+import NotionRender from "../../../components/blog/notion/NotionRender";
 import {getBlocks, getPageFromSlug} from "../../../lib/notion";
 
 export default async function Page({params}: { params: { slug: string } }) {
