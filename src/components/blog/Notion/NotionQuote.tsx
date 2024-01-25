@@ -72,7 +72,7 @@ const NotionQuote = async ({value}: {
               </div>}
         </div>
       )
-    const {title, description, favicon, open_graph, oEmbed, twitter_card} = data
+    const {title, favicon, open_graph, oEmbed, twitter_card} = data
     const images = open_graph?.images ?? twitter_card?.images ?? oEmbed?.thumbnails ?? []
 
     return (

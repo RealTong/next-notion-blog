@@ -1,11 +1,8 @@
-import {getBlocks, getPosts} from '../../lib/notion'
+import {getPosts} from '../../lib/notion'
 import Link from 'next/link'
 
 export default async function Page() {
   const posts = await getPosts()
-  // console.log(posts[0])
-  // const page = await get('a4712a85-29bf-4776-bec5-9e95f36dc122')
-  // console.log("page: ",page)
   return (
     <div className={'mx-auto'}>
       {posts.map((post) => {

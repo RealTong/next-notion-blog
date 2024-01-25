@@ -7,9 +7,9 @@ const NotionCallout = ({value}: {
   // read first bg color of text as callout background color
   let calloutBackgroundColor = value.color
 
-  let calloutTextBgColor = value.rich_text[0].annotations.color
+  // let calloutTextBgColor = value.rich_text[0].annotations.color
 
-  calloutTextBgColor = calloutTextBgColor.endsWith('_background') ? calloutTextBgColor.replace('_background', '') : 'gray'
+  // calloutTextBgColor = calloutTextBgColor.endsWith('_background') ? calloutTextBgColor.replace('_background', '') : 'gray'
 
   calloutBackgroundColor = calloutBackgroundColor.endsWith('_background') ? calloutBackgroundColor.replace('_background', '') : 'gray'
 

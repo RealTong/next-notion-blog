@@ -16,7 +16,7 @@ import NotionCode from "./NotionCode";
 const NotionRender = ({block}: {
   block: any
 }) => {
-  const {type, id} = block
+  const {type} = block
   const value = block[type]
   switch (block.type) {
     case 'heading_1':

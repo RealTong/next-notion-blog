@@ -80,12 +80,6 @@ async function getPosts(slug?: string): Promise<PostListProps> {
   return response.results
 }
 
-async function getPage(pageId: string): Promise<GetPageResponse> {
-  return await notion.pages.retrieve({
-    page_id: pageId,
-  })
-}
-
 async function getPageFromSlug(slug: string): Promise<GetPageResponse> {
   if (!databaseId) throw new Error('Database id is not defined')
   const response = await notion.databases.query({
