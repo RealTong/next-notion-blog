@@ -14,5 +14,5 @@ export const GET = async (request: NextApiRequest, {params}: {
   }
   const decodeURL = decodeURIComponent(url as string)
   const linkPreview = await unfurl(decodeURL, {})
-  return Response.json({linkPreview}, {status: 200})
+  return Response.json(linkPreview, {status: 200})
 }
