@@ -1,20 +1,6 @@
 import {QueryDatabaseResponse} from '@notionhq/client/build/src/api-endpoints'
-import {ReactElement} from 'react'
 
 export type PostListProps = QueryDatabaseResponse['results']
-
-type Properties = Extract<
-  QueryDatabaseResponse["results"][number],
-  { properties: unknown }
->["properties"];
-
-export interface IndexPageProps {
-  latestPosts: PostListProps
-}
-
-export interface BlogPageProps {
-  latestPosts: PostListProps
-}
 
 export interface ProductProps {
   name: string

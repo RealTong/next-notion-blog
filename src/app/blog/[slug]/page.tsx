@@ -1,5 +1,5 @@
 import {indexGenerator, rnrSlugify} from '@9gustin/react-notion-render'
-import NotionBlockRender from "../../../components/blog/NotionBlocks";
+import NotionRender from "../../../components/blog/Notion/NotionRender";
 
 const TableOfContents = ({blocks}) => {
   return (
@@ -38,7 +38,7 @@ export default async function Page({params}: { params: { slug: string } }) {
       {/*<Render blocks={blocks} useStyles={true} emptyBlocks={true} classNames={true}/>*/}
       {
         blocks.map((block: any) => {
-          return <NotionBlockRender key={block.id} block={block}/>
+          return <NotionRender key={block.id} block={block}/>
         })
       }
     </>
