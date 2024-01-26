@@ -4239,7 +4239,7 @@ packages:
       - supports-color
     dev: false
 
-  /unocss@0.58.3(postcss@8.4.31)(vite@5.0.10):
+  /unocss@0.58.3(postcss@8.4.31)(vite@5.0.12):
     resolution: {integrity: sha512-2rnvghfiIDRQ2cOrmN4P7J7xV2p3yBK+bPAt1aoUxCXcszkLczAnQzh9c7IZ+p70kSVstK45cJTYV6TMzOLF7Q==}
     engines: {node: '>=14'}
     peerDependencies:
