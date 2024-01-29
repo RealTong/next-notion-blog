@@ -34,6 +34,12 @@ const brandList: BrandProps[] = [
     css: 'hover:bg-[#58CC02]',
   },
   {
+    brandIcon: 'i-simple-icons-steam',
+    brandName: 'Steam',
+    link: 'https://steamcommunity.com/profiles/76561199000200043/',
+    css: 'hover:bg-[#000000]',
+  },
+  {
     brandIcon: 'i-simple-icons-instagram',
     brandName: 'Instagram',
     link: 'https://www.instagram.com/realtong_run/',
